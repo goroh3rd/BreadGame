@@ -25,17 +25,20 @@ public class BreadManager : MonoBehaviour // パンの生成、管理を行うクラス
     [ContextMenu("CreateBread")]
     public void Test()
     {
-        CreateBread(new BreadData(BreadType.test, Vector3.zero, true));
+        for(int i = 0; i < 10; i++) CreateBread(new BreadData((BreadType)Random.Range(0, 2), Vector3.zero, true));
     }
     private void Update()
     {
-        if (Input.GetMouseButton(0))
+        //if (Input.GetMouseButton(0))
+        //{
+        //    Vector3 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        //    pos.z = 0;
+        //    CreateBread(new BreadData(BreadType.test, pos, true));
+        //}
+        if(Input.GetKeyDown(KeyCode.Space))
         {
-            Vector3 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            pos.z = 0;
-            CreateBread(new BreadData(BreadType.test, pos, true));
+            Test();
         }
-
     }
 }
 public struct BreadData
