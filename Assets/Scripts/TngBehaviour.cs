@@ -5,15 +5,44 @@ using System.Linq;
 public class TngBehaviour : MonoBehaviour
 {
     [SerializeField] BreadManager breadManager;
-    [SerializeField] float maxForce = 1.0f;
-    [SerializeField] float range = 1.0f;
-    void Update()
+    [SerializeField, Range(0f, 2f)] float maxForce = 1.0f;
+    [SerializeField, Range(0f, 3f)] float range = 1.0f;
+    [SerializeField] GameObject left;
+    [SerializeField] GameObject right;
+    private SpriteRenderer leftRenderer;
+    private SpriteRenderer rightRenderer;
+    private void Start()
+    {
+        leftRenderer = left.GetComponent<SpriteRenderer>();
+        rightRenderer = right.GetComponent<SpriteRenderer>();
+    }
+    private void Update()
     {
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         this.transform.position = new Vector3(mousePos.x, mousePos.y, 0);
         if (Input.GetMouseButtonDown(0))
         {
-            PushBread(this.transform.position);
+            PushBread(left.transform.position);
+        }
+        if (Input.GetMouseButtonDown(1))
+        {
+            PushBread(right.transform.position);
+        }
+        if (Input.GetMouseButton(0))
+        {
+            leftRenderer.color = Color.red;
+        }
+        else
+        {
+            leftRenderer.color = Color.white;
+        }
+        if (Input.GetMouseButton(1))
+        {
+            rightRenderer.color = Color.red;
+        }
+        else
+        {
+            rightRenderer.color = Color.white;
         }
     }
     private void PushBread(Vector3 pos)
@@ -44,5 +73,9 @@ public class TngBehaviour : MonoBehaviour
                 AddForceToBread(bread, force);
             }
         }
+    }
+    private bool longClicked(float threshold = 0.5f)
+    {
+        return Input.GetMouseButton(0) && Input.GetMouseButtonDown(0) && Input.GetMouseButtonUp(0);
     }
 }
