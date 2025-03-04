@@ -21,7 +21,7 @@ public class BreadBehaviour : MonoBehaviour
         float width = (pixelWidth / pixelsPerUnit) * this.transform.localScale.x;
         float height = (pixelHeight / pixelsPerUnit) * this.transform.localScale.y;
         breadCol.radius = width / 3;
-        this.breadRb.AddForce(new Vector2(Random.Range(-0.05f, 0.05f), Random.Range(-0.05f, 0.05f)), ForceMode2D.Impulse);
+        this.breadRb.AddForce(new Vector2(Random.Range(-0.01f, 0.01f), Random.Range(-0.01f, 0.01f)), ForceMode2D.Impulse);
 
         //breadRb.AddForce(new Vector2(0, 1), ForceMode2D.Impulse);
     }
@@ -32,5 +32,9 @@ public class BreadBehaviour : MonoBehaviour
     public void Bake()
     {
         data.baked = true;
+    }
+    public void Grabbed(Vector3 pos)
+    {
+        this.transform.position = pos;
     }
 }
