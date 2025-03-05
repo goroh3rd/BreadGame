@@ -6,7 +6,8 @@ public class BreadBehaviour : MonoBehaviour
     [SerializeField] Rigidbody2D breadRb;
     [SerializeField] CircleCollider2D breadCol;
     private BreadImageManager imageManager;
-    private BreadData data = new();
+    private BreadData data;
+    public BreadData Data => data;
     private BreadManager manager;
     public void Init(BreadData data, BreadManager manager)
     {
@@ -33,8 +34,13 @@ public class BreadBehaviour : MonoBehaviour
     {
         data.baked = true;
     }
-    public void Grabbed(Vector3 pos)
+    public void Grabbed(Vector3 pos, GrabType type)
     {
         this.transform.position = pos;
+        this.data.grabType = type;
+    }
+    public void Released()
+    {
+        this.data.grabType = GrabType.Released;
     }
 }

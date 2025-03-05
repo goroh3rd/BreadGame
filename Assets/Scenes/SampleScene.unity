@@ -715,6 +715,7 @@ MonoBehaviour:
   range: 2
   left: {fileID: 2105765887}
   right: {fileID: 1793172544}
+  longClickThreshold: 0.15
 --- !u!1 &1400202438
 GameObject:
   m_ObjectHideFlags: 0

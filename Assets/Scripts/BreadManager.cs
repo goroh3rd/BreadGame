@@ -29,27 +29,25 @@ public class BreadManager : MonoBehaviour // パンの生成、管理を行うクラス
     }
     private void Update()
     {
-        //if (Input.GetMouseButton(0))
-        //{
-        //    Vector3 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        //    pos.z = 0;
-        //    CreateBread(new BreadData(BreadType.test, pos, true));
-        //}
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            Test();
-        }
+        if(Input.GetKeyDown(KeyCode.Space)) Test();
     }
 }
-public struct BreadData
+public class BreadData
 {
     public BreadType type;
     public Vector3 pos;
     public bool baked;
-    public BreadData(BreadType type, Vector3 pos, bool baked = true)
+    public GrabType grabType;
+    public BreadData(BreadType type, Vector3 pos, bool baked = true, GrabType grabType = GrabType.Released)
     {
         this.type = type;
         this.pos = pos;
         this.baked = baked;
     }
+}
+public enum GrabType
+{
+    Released,
+    Left,
+    Right
 }
