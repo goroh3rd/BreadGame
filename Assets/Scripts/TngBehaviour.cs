@@ -84,13 +84,6 @@ public class TngBehaviour : MonoBehaviour
     }
     private void PushBread(Vector3 pos)
     {
-        //for (int i = 0; i < breadManager.Breads.Count; i++)
-        //{
-        //    BreadBehaviour bread = breadManager.Breads.ElementAt(i).Value;
-        //    if (GetDistance(pos, bread.transform.position) > range || bread.Data.grabType != GrabType.Released) continue;
-        //    Vector3 force = (bread.transform.position - pos).normalized * maxForce;
-        //    AddForceToBread(bread, force);
-        //}
         foreach (var bread in breadManager.Breads)
         {
             if (GetDistance(pos, bread.transform.position) > range || bread.Data.grabType != GrabType.Released) continue;
@@ -112,14 +105,6 @@ public class TngBehaviour : MonoBehaviour
     }
     private void AddForceToNearBread(Vector3 force)
     {
-        //for (int i = 0; i < breadManager.Breads.Count; i++)
-        //{
-        //    BreadBehaviour bread = breadManager.Breads.ElementAt(i).Value;
-        //    if (GetDistance(this.transform.position, bread.transform.position) < range)
-        //    {
-        //        AddForceToBread(bread, force);
-        //    }
-        //}
         foreach (var bread in breadManager.Breads)
         {
             if (GetDistance(this.transform.position, bread.transform.position) < range)
