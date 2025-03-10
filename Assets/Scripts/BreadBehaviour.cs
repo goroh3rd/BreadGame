@@ -5,6 +5,7 @@ public class BreadBehaviour : MonoBehaviour
     [SerializeField] SpriteRenderer spriteRenderer;
     [SerializeField] Rigidbody2D breadRb;
     [SerializeField] CircleCollider2D breadCol;
+    [SerializeField] Animator breadAnimator;
     private BreadImageManager imageManager;
     private BreadData data;
     public BreadData Data => data;
@@ -21,9 +22,9 @@ public class BreadBehaviour : MonoBehaviour
         float pixelsPerUnit = spriteRenderer.sprite.pixelsPerUnit;
         float width = (pixelWidth / pixelsPerUnit) * this.transform.localScale.x;
         float height = (pixelHeight / pixelsPerUnit) * this.transform.localScale.y;
-        breadCol.radius = width / 3;
+        breadCol.radius = width / 2.5f;
         this.breadRb.AddForce(new Vector2(Random.Range(-0.01f, 0.01f), Random.Range(-0.01f, 0.01f)), ForceMode2D.Impulse);
-
+        breadAnimator.Play("Poping", 0, Random.Range(0f, breadAnimator.GetCurrentAnimatorStateInfo(0).length) / breadAnimator.GetCurrentAnimatorStateInfo(0).length);
         //breadRb.AddForce(new Vector2(0, 1), ForceMode2D.Impulse);
     }
     public void AddForce(Vector3 force)
@@ -38,9 +39,13 @@ public class BreadBehaviour : MonoBehaviour
     {
         this.transform.position = pos;
         this.data.grabType = type;
+        breadCol.enabled = false;
+        breadAnimator.speed = 0;
     }
     public void Released()
     {
         this.data.grabType = GrabType.Released;
+        breadCol.enabled = true;
+        breadAnimator.speed = 1;
     }
 }

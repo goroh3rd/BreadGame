@@ -41,20 +41,20 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: BakGround
+  - name: BackGround
     uniqueID: 3887844895
+    locked: 0
+  - name: Ground
+    uniqueID: 3255737037
+    locked: 0
+  - name: Fence
+    uniqueID: 1576865851
     locked: 0
   - name: Pan
     uniqueID: 2155650089
     locked: 0
   - name: Tng
     uniqueID: 1515450719
-    locked: 0
-  - name: New Layer 4
-    uniqueID: 3255737037
-    locked: 0
-  - name: New Layer 5
-    uniqueID: 1576865851
     locked: 0
   - name: New Layer 6
     uniqueID: 1319643387
