@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8360752981180401792}
   - component: {fileID: -4689714453371512689}
   - component: {fileID: 1933266091025030239}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: PanCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 4496864150132575361}
   - component: {fileID: 3106244085638217273}
   - component: {fileID: 3798685656948491829}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: PanImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -188,8 +188,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -2139317207
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: cd2850df558fa30478355e5bd5d8a0e5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
