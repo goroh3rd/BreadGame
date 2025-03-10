@@ -33,10 +33,10 @@ public class TngBehaviour : MonoBehaviour
         }
         if (Input.GetMouseButton(0) && Time.time - clickTime > longClickThreshold && !isLeftLongClick)
         {
-            if (CheckBreadExist(left.transform.position) is (GameObject, BreadBehaviour) bread)
+            if (CheckBreadExist(left.transform.position) is BreadBehaviour bread)
             {
-                leftGrabbed = bread.Item2;
-                DragBread(bread.Item2, left.transform.position);
+                leftGrabbed = bread;
+                DragBread(bread, left.transform.position);
             }
             else
             {
@@ -46,10 +46,10 @@ public class TngBehaviour : MonoBehaviour
         }
         if (Input.GetMouseButton(1) && Time.time - clickTime > longClickThreshold && !isRightLongClick)
         {
-            if (CheckBreadExist(right.transform.position) is (GameObject, BreadBehaviour) bread)
+            if (CheckBreadExist(right.transform.position) is BreadBehaviour bread)
             {
-                rightGrabbed = bread.Item2;
-                DragBread(bread.Item2, right.transform.position);
+                rightGrabbed = bread;
+                DragBread(bread, right.transform.position);
             }
             else
             {
@@ -84,9 +84,15 @@ public class TngBehaviour : MonoBehaviour
     }
     private void PushBread(Vector3 pos)
     {
-        for (int i = 0; i < breadManager.Breads.Count; i++)
+        //for (int i = 0; i < breadManager.Breads.Count; i++)
+        //{
+        //    BreadBehaviour bread = breadManager.Breads.ElementAt(i).Value;
+        //    if (GetDistance(pos, bread.transform.position) > range || bread.Data.grabType != GrabType.Released) continue;
+        //    Vector3 force = (bread.transform.position - pos).normalized * maxForce;
+        //    AddForceToBread(bread, force);
+        //}
+        foreach (var bread in breadManager.Breads)
         {
-            BreadBehaviour bread = breadManager.Breads.ElementAt(i).Value;
             if (GetDistance(pos, bread.transform.position) > range || bread.Data.grabType != GrabType.Released) continue;
             Vector3 force = (bread.transform.position - pos).normalized * maxForce;
             AddForceToBread(bread, force);
@@ -106,25 +112,32 @@ public class TngBehaviour : MonoBehaviour
     }
     private void AddForceToNearBread(Vector3 force)
     {
-        for (int i = 0; i < breadManager.Breads.Count; i++)
+        //for (int i = 0; i < breadManager.Breads.Count; i++)
+        //{
+        //    BreadBehaviour bread = breadManager.Breads.ElementAt(i).Value;
+        //    if (GetDistance(this.transform.position, bread.transform.position) < range)
+        //    {
+        //        AddForceToBread(bread, force);
+        //    }
+        //}
+        foreach (var bread in breadManager.Breads)
         {
-            BreadBehaviour bread = breadManager.Breads.ElementAt(i).Value;
             if (GetDistance(this.transform.position, bread.transform.position) < range)
             {
                 AddForceToBread(bread, force);
             }
         }
     }
-    private (GameObject, BreadBehaviour) CheckBreadExist(Vector3 pos)
+    private BreadBehaviour CheckBreadExist(Vector3 pos)
     {
         GameObject[] found = Physics2D.OverlapPointAll(pos).Select(c => c.gameObject).ToArray();
         foreach (var bread in breadManager.Breads)
         {
-            if (found.Contains(bread.Key))
+            if (found.Contains(bread.gameObject))
             {
-                return (bread.Key, bread.Value);
+                return bread;
             }
         }
-        return (null, null);
+        return null;
     }
 }

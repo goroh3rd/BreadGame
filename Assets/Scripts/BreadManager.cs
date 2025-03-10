@@ -4,23 +4,24 @@ using System.Collections.Generic;
 public class BreadManager : MonoBehaviour // パンの生成、管理を行うクラス
 {
     [SerializeField] BreadImageManager imageManager;
-    private Dictionary<GameObject, BreadBehaviour> breads = new();
-    public Dictionary<GameObject, BreadBehaviour> Breads => breads;
+    private List<BreadBehaviour> breads = new();
+    public List<BreadBehaviour> Breads => breads;
     [SerializeField] GameObject breadPrefab;
     public void CreateBread(BreadData data)
     {
         GameObject bread = Instantiate(breadPrefab, data.pos, Quaternion.identity);
-        breads.Add(bread, bread.GetComponent<BreadBehaviour>());
-        breads[bread].Init(data, this);
+        BreadBehaviour breadBehaviour = bread.GetComponent<BreadBehaviour>();
+        breads.Add(breadBehaviour);
+        breadBehaviour.Init(data, this);
     }
-    public void RemoveBread(GameObject bread)
+    public void RemoveBread(BreadBehaviour bread)
     {
         breads.Remove(bread);
-        Destroy(bread);
+        Destroy(bread.gameObject);
     }
-    public void BakeBread(GameObject bread)
+    public void BakeBread(BreadBehaviour bread)
     {
-        breads[bread].Bake();
+        bread.Bake();
     }
     [ContextMenu("CreateBread")]
     public void Test()
