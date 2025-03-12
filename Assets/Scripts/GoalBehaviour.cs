@@ -5,7 +5,7 @@ using System.Linq;
 public class GoalBehaviour : MonoBehaviour
 {
     [SerializeField] private BreadManager manager;
-    [SerializeField]  GoalData data;
+    [SerializeField] GoalData data;
     public GoalData Data => data;
     private List<Collider2D> enteredBreads = new();
     private void Start()
@@ -35,7 +35,7 @@ public class GoalBehaviour : MonoBehaviour
         this.data = new GoalData((BreadType)1);
     }
 }
-public class GoalData
+[System.Serializable] public class GoalData
 {
     public BreadType type;
     public int count;

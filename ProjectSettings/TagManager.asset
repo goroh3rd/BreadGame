@@ -3,7 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - Tng
+  - Wall
+  - Pan
+  - Cooker
+  - Goal
   layers:
   - Default
   - TransparentFX
@@ -53,11 +58,11 @@ TagManager:
   - name: Pan
     uniqueID: 2155650089
     locked: 0
+  - name: Effects
+    uniqueID: 1319643387
+    locked: 0
   - name: Tng
     uniqueID: 1515450719
-    locked: 0
-  - name: New Layer 6
-    uniqueID: 1319643387
     locked: 0
   - name: New Layer 7
     uniqueID: 1369033169

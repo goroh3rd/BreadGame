@@ -26,14 +26,14 @@ public class BreadManager : MonoBehaviour // パンの生成、管理を行うクラス
     [ContextMenu("CreateBread")]
     public void Test()
     {
-        for(int i = 0; i < 10; i++) CreateBread(new BreadData((BreadType)Random.Range(0, 2), Vector3.zero, true));
+        for(int i = 0; i < 10; i++) CreateBread(new BreadData((BreadType)Random.Range(0, 2), Vector3.zero, false));
     }
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.Space)) Test();
     }
 }
-public class BreadData
+[System.Serializable] public class BreadData
 {
     public BreadType type;
     public Vector3 pos;
@@ -44,6 +44,16 @@ public class BreadData
         this.type = type;
         this.pos = pos;
         this.baked = baked;
+    }
+    public BreadData Bake()
+    {
+        this.baked = true;
+        return this;
+    }
+    public BreadData Unbake()
+    {
+        this.baked = false;
+        return this;
     }
 }
 public enum GrabType

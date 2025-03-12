@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1933266091025030239}
   m_Layer: 10
   m_Name: PanCollider
-  m_TagString: Untagged
+  m_TagString: Pan
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -114,6 +114,14 @@ MonoBehaviour:
   breadRb: {fileID: 8360752981180401792}
   breadCol: {fileID: -4689714453371512689}
   breadAnimator: {fileID: 3798685656948491829}
+  smoke: {fileID: -8137532000326344740, guid: 374e61a8af0d26549887eb3b3040184a, type: 3}
+  star: {fileID: -5184127257427349010, guid: 9cf13289a5d44d441a695abc039a0351, type: 3}
+  panticle: {fileID: 2712381571795538843, guid: c67c73483606b6449a3f4079f39aa610, type: 3}
+  data:
+    type: 0
+    pos: {x: 0, y: 0, z: 0}
+    baked: 0
+    grabType: 0
 --- !u!1 &6791792390361668225
 GameObject:
   m_ObjectHideFlags: 0

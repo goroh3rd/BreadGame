@@ -6,7 +6,10 @@ public class BreadBehaviour : MonoBehaviour
     [SerializeField] Rigidbody2D breadRb;
     [SerializeField] CircleCollider2D breadCol;
     [SerializeField] Animator breadAnimator;
+    [SerializeField] Sprite smoke;
+    [SerializeField] Sprite star;
     private BreadImageManager imageManager;
+    [SerializeField] GameObject panticle;
     [SerializeField] private BreadData data;
     public BreadData Data => data;
     private BreadManager manager;
@@ -26,15 +29,32 @@ public class BreadBehaviour : MonoBehaviour
         this.breadRb.AddForce(new Vector2(Random.Range(-0.01f, 0.01f), Random.Range(-0.01f, 0.01f)), ForceMode2D.Impulse);
         breadAnimator.Play("Poping", 0, Random.Range(0f, breadAnimator.GetCurrentAnimatorStateInfo(0).length) / breadAnimator.GetCurrentAnimatorStateInfo(0).length);
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Cooker") && !this.Data.baked)
+        {
+            this.Bake();
+        }
+    }
     public void AddForce(Vector3 force)
     {
         breadRb.AddForce(force, ForceMode2D.Impulse);
     }
     public void Bake()
     {
-        data.baked = true;
-        this.data.baked = true;
+        data.Bake();
         spriteRenderer.sprite = imageManager.GetBakedImage(data.type);
+        GameObject panticle = Instantiate(this.panticle, this.transform.position, Quaternion.identity);
+        panticle.transform.rotation = Quaternion.Euler(-90, 0, 0);
+        panticle.SetActive(true);
+        ParticleSystem particleSystem = panticle.GetComponent<ParticleSystem>();
+        particleSystem.textureSheetAnimation.SetSprite(0, smoke);
+        particleSystem.Play();
+    }
+    public void Unbake() // ‘½•ªŽg‚í‚È‚¢
+    {
+        data.Unbake();
+        spriteRenderer.sprite = imageManager.GetRawImage(data.type);
     }
     public void Grabbed(Vector3 pos, GrabType type)
     {
