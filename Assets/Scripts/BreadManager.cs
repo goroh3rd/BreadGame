@@ -26,7 +26,7 @@ public class BreadManager : MonoBehaviour // パンの生成、管理を行うクラス
     [ContextMenu("CreateBread")]
     public void Test()
     {
-        for(int i = 0; i < 10; i++) CreateBread(new BreadData((BreadType)0, Vector3.zero, true));
+        for(int i = 0; i < 10; i++) CreateBread(new BreadData((BreadType)0, Vector3.zero, false));
     }
     private void Update()
     {
@@ -39,6 +39,7 @@ public class BreadManager : MonoBehaviour // パンの生成、管理を行うクラス
     public Vector3 pos;
     public bool baked;
     public GrabType grabType;
+    public bool isGoal = false;
     public BreadData(BreadType type, Vector3 pos, bool baked = true, GrabType grabType = GrabType.Released)
     {
         this.type = type;
@@ -53,6 +54,11 @@ public class BreadManager : MonoBehaviour // パンの生成、管理を行うクラス
     public BreadData Unbake()
     {
         this.baked = false;
+        return this;
+    }
+    public BreadData SetGoal()
+    {
+        this.isGoal = true;
         return this;
     }
 }

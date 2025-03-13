@@ -15,15 +15,28 @@ public class GoalBehaviour : MonoBehaviour
     }
     private void OnTriggerEnter2D (Collider2D collision)
     {
+        if (!collision.CompareTag("Pan")) return;
+        BreadBehaviour bread = collision.GetComponent<BreadBehaviour>();
+        if (!bread.Data.baked) return;
         enteredBreads.Add(collision);
-        if (CheckAllConteins(data.type))
+        if (bread.Data.type == this.data.type)
+        {
+            bread.SetGoal();
+        }
+        if (CheckAllConteins(this.data.type))
         {
             Debug.Log("Goal Completed");
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
+        if (!collision.CompareTag("Pan")) return;
         enteredBreads.Remove(collision);
+        BreadBehaviour bread = collision.GetComponent<BreadBehaviour>();
+        if (bread.Data.type == this.data.type)
+        {
+            bread.UnsetGoal();
+        }
     }
     private bool CheckAllConteins(BreadType type)
     {

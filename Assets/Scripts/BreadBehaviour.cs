@@ -36,6 +36,20 @@ public class BreadBehaviour : MonoBehaviour
             this.Bake();
         }
     }
+    public void SetGoal()
+    {
+        this.data.isGoal = true;
+        GameObject particle = Instantiate(this.panticle, this.transform.position, Quaternion.identity);
+        particle.transform.rotation = Quaternion.Euler(-90, 0, 0);
+        particle.SetActive(true);
+        ParticleSystem particleSystem = particle.GetComponent<ParticleSystem>();
+        particleSystem.textureSheetAnimation.SetSprite(0, star);
+        particleSystem.Play();
+    }
+    public void UnsetGoal()
+    {
+        this.data.isGoal = false;
+    }
     public void AddForce(Vector3 force)
     {
         breadRb.AddForce(force, ForceMode2D.Impulse);
