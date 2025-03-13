@@ -26,7 +26,7 @@ public class BreadManager : MonoBehaviour // パンの生成、管理を行うクラス
     [ContextMenu("CreateBread")]
     public void Test()
     {
-        for(int i = 0; i < 10; i++) CreateBread(new BreadData((BreadType)Random.Range(0, 2), Vector3.zero, false));
+        for(int i = 0; i < 10; i++) CreateBread(new BreadData((BreadType)0, Vector3.zero, true));
     }
     private void Update()
     {
