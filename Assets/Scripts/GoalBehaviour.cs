@@ -5,15 +5,36 @@ using System.Linq;
 public class GoalBehaviour : MonoBehaviour
 {
     [SerializeField] private BreadManager manager;
+    [SerializeField] private BoxCollider2D goalCol;
     [SerializeField] GoalData data;
+    [System.Serializable]
+    public class GoalData
+    {
+        public BreadType type;
+        public int count;
+        public bool isCompleted;
+        public GoalData(BreadType type)
+        {
+            this.type = type;
+        }
+        public GoalData()
+        {
+            this.type = BreadType.test;
+        }
+    }
+    [SerializeField] private GoalOpenDirection openDirection;
+    private enum GoalOpenDirection { Top, Bottom, Left, Right }
+    [SerializeField] List<GoalFenceAdjusting> fences;
     public GoalData Data => data;
     private List<Collider2D> enteredBreads = new();
     private void Start()
     {
         this.manager = FindAnyObjectByType<BreadManager>();
         this.data = new GoalData();
+        fences.ForEach(f => f.Adjust(this.transform.position, goalCol.size.x, goalCol.size.y));
+        fences.Single(f => (int)f.placement == (int)openDirection).gameObject.SetActive(false);
     }
-    private void OnTriggerEnter2D (Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (!collision.CompareTag("Pan")) return;
         BreadBehaviour bread = collision.GetComponent<BreadBehaviour>();
@@ -46,19 +67,5 @@ public class GoalBehaviour : MonoBehaviour
     public void Test()
     {
         this.data = new GoalData((BreadType)1);
-    }
-}
-[System.Serializable] public class GoalData
-{
-    public BreadType type;
-    public int count;
-    public bool isCompleted;
-    public GoalData(BreadType type)
-    {
-        this.type = type;
-    }
-    public GoalData()
-    {
-        this.type = BreadType.test;
     }
 }
