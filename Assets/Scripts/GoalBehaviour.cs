@@ -47,6 +47,10 @@ public class GoalBehaviour : MonoBehaviour
         if (CheckAllConteins(this.data.type))
         {
             Debug.Log("Goal Completed");
+            if (manager.Breads.All(b => b.Data.isGoal))
+            {
+                Debug.Log("All Goal Completed");
+            }
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
