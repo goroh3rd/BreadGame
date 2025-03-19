@@ -6,6 +6,7 @@ public class GoalBehaviour : MonoBehaviour
 {
     [SerializeField] private BreadManager manager;
     [SerializeField] private BoxCollider2D goalCol;
+    [SerializeField] private GameObject clearWindow;
     [SerializeField] GoalData data;
     [System.Serializable]
     public class GoalData
