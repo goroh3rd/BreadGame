@@ -13,6 +13,7 @@ public class GoalBehaviour : MonoBehaviour
     public GoalData Data => data;
     [SerializeField] private GoalOpenDirection openDirection;
     [SerializeField] List<GoalFenceAdjusting> fences;
+    [SerializeField] private Vector3 fenceImageScale;
     [SerializeField] private GameObject breadImage;
     [SerializeField] private Vector3 breadImageScale;
     [SerializeField] private SpriteRenderer breadImageRenderer;
@@ -41,7 +42,7 @@ public class GoalBehaviour : MonoBehaviour
     {
         this.manager = FindAnyObjectByType<BreadManager>();
         this.clearWindow = FindAnyObjectByType<ClearWindowBehaviour>();
-        fences.ForEach(f => f.Adjust(this.transform.position, goalCol.size.x, goalCol.size.y));
+        fences.ForEach(f => f.Adjust(this.transform.position));
         fences.Single(f => (int)f.placement == (int)openDirection).gameObject.SetActive(false);
         AdjusBreadImage();
     }
