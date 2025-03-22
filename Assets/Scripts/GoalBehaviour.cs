@@ -10,6 +10,14 @@ public class GoalBehaviour : MonoBehaviour
     [SerializeField] private BoxCollider2D goalCol;
     [SerializeField] private ClearWindowBehaviour clearWindow;
     [SerializeField] GoalData data = new();
+    public GoalData Data => data;
+    [SerializeField] private GoalOpenDirection openDirection;
+    [SerializeField] List<GoalFenceAdjusting> fences;
+    [SerializeField] private GameObject breadImage;
+    [SerializeField] private Vector3 breadImageScale;
+    [SerializeField] private SpriteRenderer breadImageRenderer;
+    private enum GoalOpenDirection { Top, Bottom, Left, Right }
+    private List<Collider2D> enteredBreads = new();
     [System.Serializable]
     public class GoalData
     {
@@ -25,14 +33,6 @@ public class GoalBehaviour : MonoBehaviour
             this.type = BreadType.test;
         }
     }
-    [SerializeField] private GoalOpenDirection openDirection;
-    private enum GoalOpenDirection { Top, Bottom, Left, Right }
-    [SerializeField] List<GoalFenceAdjusting> fences;
-    [SerializeField] private GameObject breadImage;
-    [SerializeField] private Vector3 breadImageScale;
-    [SerializeField] private SpriteRenderer breadImageRenderer;
-    public GoalData Data => data;
-    private List<Collider2D> enteredBreads = new();
     private void Start()
     {
         this.Init();
@@ -40,16 +40,10 @@ public class GoalBehaviour : MonoBehaviour
     public void Init()
     {
         this.manager = FindAnyObjectByType<BreadManager>();
-        this.imageManager = FindAnyObjectByType<BreadImageManager>();
         this.clearWindow = FindAnyObjectByType<ClearWindowBehaviour>();
         fences.ForEach(f => f.Adjust(this.transform.position, goalCol.size.x, goalCol.size.y));
         fences.Single(f => (int)f.placement == (int)openDirection).gameObject.SetActive(false);
-        Vector3 scale = this.breadImage.transform.localScale;
-        scale.x = breadImageScale.x / this.breadImage.transform.lossyScale.x;
-        scale.y = breadImageScale.y / this.breadImage.transform.lossyScale.y;
-        scale.z = 1;
-        this.breadImage.transform.localScale = scale;
-        this.breadImageRenderer.sprite = imageManager.GetBakedImage(this.data.type);
+        AdjusBreadImage();
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -89,6 +83,16 @@ public class GoalBehaviour : MonoBehaviour
         Debug.Log("All Goal Completed");
         yield return new WaitForSeconds(wait);
         clearWindow.Appear();
+    }
+    private void AdjusBreadImage()
+    {
+        this.imageManager = FindAnyObjectByType<BreadImageManager>();
+        Vector3 scale = Vector3.zero;
+        scale.x = breadImageScale.x / this.breadImage.transform.parent.lossyScale.x;
+        scale.y = breadImageScale.y / this.breadImage.transform.parent.lossyScale.y;
+        scale.z = 1;
+        this.breadImage.transform.localScale = scale;
+        this.breadImageRenderer.sprite = this.imageManager.GetBakedImage(this.data.type);
     }
     [ContextMenu("Test")]
     public void Test()

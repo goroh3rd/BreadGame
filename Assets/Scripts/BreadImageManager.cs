@@ -9,6 +9,10 @@ public class BreadImageManager : MonoBehaviour
     private Dictionary<BreadType, Sprite> bakedImageDict;
     private void Awake()
     {
+        InitDict();
+    }
+    private void InitDict()
+    {
         rawImageDict = new Dictionary<BreadType, Sprite>
         {
             { BreadType.test, rawImages[0] },
