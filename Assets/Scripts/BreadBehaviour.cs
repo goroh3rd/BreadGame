@@ -8,14 +8,16 @@ public class BreadBehaviour : MonoBehaviour
     [SerializeField] Animator breadAnimator;
     [SerializeField] Sprite smoke;
     [SerializeField] Sprite star;
-    private BreadImageManager imageManager;
+    [SerializeField] private BreadImageManager imageManager;
     [SerializeField] GameObject panticle;
-    [SerializeField] private BreadData data;
+    private BreadData data;
     public BreadData Data => data;
+    private BreadState initialState;
     private BreadManager manager;
     public void Init(BreadData data, BreadManager manager)
     {
         this.data = data;
+        this.initialState = new BreadState(data, this.transform);
         this.manager = manager;
         this.imageManager = FindAnyObjectByType<BreadImageManager>();
         spriteRenderer.sprite = data.baked ? imageManager.GetBakedImage(data.type) : imageManager.GetRawImage(data.type);
@@ -28,6 +30,10 @@ public class BreadBehaviour : MonoBehaviour
         breadCol.radius = width / 2.5f;
         this.breadRb.AddForce(new Vector2(Random.Range(-0.01f, 0.01f), Random.Range(-0.01f, 0.01f)), ForceMode2D.Impulse);
         breadAnimator.Play("Poping", 0, Random.Range(0f, breadAnimator.GetCurrentAnimatorStateInfo(0).length) / breadAnimator.GetCurrentAnimatorStateInfo(0).length);
+    }
+    private void Start()
+    {
+        this.Init(this.Data, FindAnyObjectByType<BreadManager>());
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -86,5 +92,12 @@ public class BreadBehaviour : MonoBehaviour
         spriteRenderer.sortingOrder = 0;
         spriteRenderer.color = new Color(1, 1, 1, 1);
         breadAnimator.speed = 1;
+    }
+    public void ResetBread()
+    {
+        this.data = initialState;
+        this.spriteRenderer.sprite = data.baked ? imageManager.GetBakedImage(data.type) : imageManager.GetRawImage(data.type);
+        this.transform.position = initialState.pos;
+        this.breadRb.linearVelocity = Vector2.zero;
     }
 }

@@ -26,7 +26,7 @@ public class BreadManager : MonoBehaviour // パンの生成、管理を行うクラス
     [ContextMenu("CreateBread")]
     public void Test()
     {
-        for(int i = 0; i < 10; i++) CreateBread(new BreadData((BreadType)0, Vector3.zero));
+        for(int i = 0; i < 1; i++) CreateBread(new BreadData((BreadType)0, Vector3.zero));
     }
     private void Update()
     {
@@ -61,6 +61,24 @@ public class BreadManager : MonoBehaviour // パンの生成、管理を行うクラス
         this.isGoal = true;
         return this;
     }
+}
+public class BreadState : BreadData
+{
+    public Transform transform;
+    public BreadState(BreadData data, Transform transform) : base(data.type, data.pos, data.baked)
+    {
+        this.transform = transform;
+    }
+}
+public enum BreadType
+{
+    test,
+    white,
+    baguette,
+    croissant,
+    cream,
+    bagel,
+    curry,
 }
 public enum GrabType
 {

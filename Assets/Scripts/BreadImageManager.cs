@@ -1,16 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-public enum BreadType
-{
-    test,
-    white,
-    baguette,
-    croissant,
-    cream,
-    bagel,
-    curry,
-}
 public class BreadImageManager : MonoBehaviour
 {
     [SerializeField] List<Sprite> rawImages = new();
