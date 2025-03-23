@@ -37,9 +37,9 @@ public class BreadBehaviour : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Cooker") && !this.Data.baked)
+        if (manager.CheckCorrectCooker(this.data.type, collision.GetComponent<CookerBehaviour>().type))
         {
-            this.Bake();
+            manager.BakeBread(this);
         }
     }
     public void SetGoal()

@@ -6,6 +6,16 @@ public class BreadManager : MonoBehaviour // パンの生成、管理を行うクラス
     [SerializeField] BreadImageManager imageManager;
     private List<BreadBehaviour> breads = new();
     public List<BreadBehaviour> Breads => breads;
+    [SerializeField] private Dictionary<BreadType, CookerBehaviour.CookerType> correctCooker = new Dictionary<BreadType, CookerBehaviour.CookerType>
+    {
+        { BreadType.test, CookerBehaviour.CookerType.Bake },
+        { BreadType.white, CookerBehaviour.CookerType.Bake },
+        { BreadType.baguette, CookerBehaviour.CookerType.Bake },
+        { BreadType.croissant, CookerBehaviour.CookerType.Bake },
+        { BreadType.cream, CookerBehaviour.CookerType.Bake },
+        { BreadType.bagel, CookerBehaviour.CookerType.Boil },
+        { BreadType.curry, CookerBehaviour.CookerType.Fry },
+    };
     [SerializeField] GameObject breadPrefab;
     public void CreateBread(BreadData data)
     {
@@ -23,10 +33,15 @@ public class BreadManager : MonoBehaviour // パンの生成、管理を行うクラス
     {
         bread.Bake();
     }
+    public bool CheckCorrectCooker(BreadType bread, CookerBehaviour.CookerType cooker)
+    {
+        if (correctCooker[bread] == cooker) return true;
+        return false;
+    }
     [ContextMenu("CreateBread")]
     public void Test()
     {
-        for(int i = 0; i < 1; i++) CreateBread(new BreadData((BreadType)0, Vector3.zero));
+        for(int i = 0; i < 1; i++) CreateBread(new BreadData((BreadType)0, Vector3.zero, false));
     }
     private void Update()
     {
