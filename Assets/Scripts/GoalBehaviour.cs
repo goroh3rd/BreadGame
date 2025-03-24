@@ -42,8 +42,8 @@ public class GoalBehaviour : MonoBehaviour
     {
         this.manager = FindAnyObjectByType<BreadManager>();
         this.clearWindow = FindAnyObjectByType<ClearWindowBehaviour>();
-        fences.ForEach(f => f.Adjust(this.transform.position));
-        fences.Single(f => (int)f.placement == (int)openDirection).gameObject.SetActive(false);
+        //fences.ForEach(f => f.Adjust(this.transform.position));
+        //fences.Single(f => (int)f.placement == (int)openDirection).gameObject.SetActive(false);
         AdjusBreadImage();
     }
     private void OnTriggerEnter2D(Collider2D collision)
