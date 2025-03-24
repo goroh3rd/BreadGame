@@ -10,7 +10,7 @@ public class BreadBehaviour : MonoBehaviour
     [SerializeField] Sprite star;
     [SerializeField] private BreadImageManager imageManager;
     [SerializeField] GameObject panticle;
-    private BreadData data;
+    [SerializeField] private BreadData data;
     public BreadData Data => data;
     private BreadState initialState;
     private BreadManager manager;
