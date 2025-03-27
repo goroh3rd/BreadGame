@@ -46,8 +46,8 @@ Rigidbody2D:
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 1
-  m_Mass: 0.7853982
+  m_UseAutoMass: 0
+  m_Mass: 0.3
   m_LinearDamping: 4.5
   m_AngularDamping: 0.05
   m_GravityScale: 0
@@ -116,12 +116,14 @@ MonoBehaviour:
   breadAnimator: {fileID: 3798685656948491829}
   smoke: {fileID: -8137532000326344740, guid: 374e61a8af0d26549887eb3b3040184a, type: 3}
   star: {fileID: -5184127257427349010, guid: 9cf13289a5d44d441a695abc039a0351, type: 3}
+  imageManager: {fileID: 0}
   panticle: {fileID: 2712381571795538843, guid: c67c73483606b6449a3f4079f39aa610, type: 3}
   data:
     type: 0
     pos: {x: 0, y: 0, z: 0}
     baked: 0
     grabType: 0
+    isGoal: 0
 --- !u!1 &6791792390361668225
 GameObject:
   m_ObjectHideFlags: 0
