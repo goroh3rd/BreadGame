@@ -17,7 +17,8 @@ public class BreadBehaviour : MonoBehaviour
     public void Init(BreadData data, BreadManager manager)
     {
         this.data = data;
-        this.initialState = new BreadState(data, this.transform);
+        this.data.pos = this.transform.position;
+        this.initialState = new BreadState(data, this.transform.position);
         this.manager = manager;
         this.imageManager = FindAnyObjectByType<BreadImageManager>();
         spriteRenderer.sprite = data.baked ? imageManager.GetBakedImage(data.type) : imageManager.GetRawImage(data.type);
@@ -34,10 +35,11 @@ public class BreadBehaviour : MonoBehaviour
     private void Start()
     {
         this.Init(this.Data, FindAnyObjectByType<BreadManager>());
+        manager.AddBread(this);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (manager.CheckCorrectCooker(this.data.type, collision.GetComponent<CookerBehaviour>().type))
+        if (collision.CompareTag("Cooker") && manager.CheckCorrectCooker(this.data.type, collision.GetComponent<CookerBehaviour>().type))
         {
             manager.BakeBread(this);
         }

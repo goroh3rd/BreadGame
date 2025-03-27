@@ -747,6 +747,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SelectButton
       objectReference: {fileID: 0}
+    - target: {fileID: 6655547038668500640, guid: c5f93fa44fedf8344860f2f364d64aad, type: 3}
+      propertyPath: scene
+      value: Stage1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

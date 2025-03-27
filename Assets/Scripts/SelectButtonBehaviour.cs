@@ -7,10 +7,10 @@ public class SelectButtonBehaviour : MonoBehaviour
 {
     [SerializeField] private int sceneIndex;
     [SerializeField] private Button button;
-    [SerializeField] private SceneAsset scene;
+    [SerializeField] private string scene;
     public void LoadScene()
     {
-        SceneManager.LoadScene(scene.name);
+        SceneManager.LoadScene(scene);
     }
     public void Select()
     {

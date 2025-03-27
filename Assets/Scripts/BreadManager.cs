@@ -24,6 +24,10 @@ public class BreadManager : MonoBehaviour // パンの生成、管理を行うクラス
         breads.Add(breadBehaviour);
         breadBehaviour.Init(data, this);
     }
+    public void AddBread(BreadBehaviour bread)
+    {
+        breads.Add(bread);
+    }
     public void RemoveBread(BreadBehaviour bread)
     {
         breads.Remove(bread);
@@ -79,10 +83,10 @@ public class BreadManager : MonoBehaviour // パンの生成、管理を行うクラス
 }
 public class BreadState : BreadData
 {
-    public Transform transform;
-    public BreadState(BreadData data, Transform transform) : base(data.type, data.pos, data.baked)
+    public Vector3 initialPosition;
+    public BreadState(BreadData data, Vector3 pos) : base(data.type, data.pos, data.baked)
     {
-        this.transform = transform;
+        this.initialPosition = pos;
     }
 }
 public enum BreadType

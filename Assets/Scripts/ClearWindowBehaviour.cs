@@ -6,7 +6,7 @@ using DG.Tweening;
 public class ClearWindowBehaviour : MonoBehaviour
 {
     [SerializeField] private CanvasGroup canvasGroup;
-    [SerializeField] private SceneAsset stageSelectScene;
+    [SerializeField] private string stageSelectScene;
     private Transform initialPlace;
     private StageManager stageManager;
     private void Start()
@@ -28,6 +28,6 @@ public class ClearWindowBehaviour : MonoBehaviour
     }
     public void StageSelect()
     {
-        SceneManager.LoadScene(stageSelectScene.name);
+        SceneManager.LoadScene(stageSelectScene);
     }
 }

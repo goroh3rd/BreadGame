@@ -499,7 +499,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvasGroup: {fileID: 8449129870174950210}
-  stageSelectScene: {fileID: 0}
+  stageSelectScene: StageSelect
 --- !u!225 &8449129870174950210
 CanvasGroup:
   m_ObjectHideFlags: 0

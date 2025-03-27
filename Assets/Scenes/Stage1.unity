@@ -503,6 +503,10 @@ PrefabInstance:
       propertyPath: data.type
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1933266091025030239, guid: cbef3ce4ef118f74eaedc97efd8e3555, type: 3}
+      propertyPath: data.baked
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4496864150132575361, guid: cbef3ce4ef118f74eaedc97efd8e3555, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
