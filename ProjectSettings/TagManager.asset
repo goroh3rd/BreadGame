@@ -52,6 +52,12 @@ TagManager:
   - name: Ground
     uniqueID: 3255737037
     locked: 0
+  - name: Goal
+    uniqueID: 2527334245
+    locked: 0
+  - name: Cooker
+    uniqueID: 3018563499
+    locked: 0
   - name: FenceTop
     uniqueID: 1576865851
     locked: 0

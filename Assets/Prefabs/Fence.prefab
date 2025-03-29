@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8331830374090319029}
   - component: {fileID: 4805437541404007957}
-  - component: {fileID: 4232539280088189154}
+  - component: {fileID: 5069515033994419270}
+  - component: {fileID: 3693005202153504319}
   m_Layer: 0
   m_Name: Fence
   m_TagString: Untagged
@@ -75,7 +76,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1576865851
-  m_SortingLayer: 3
+  m_SortingLayer: 5
   m_SortingOrder: 1
   m_Sprite: {fileID: -8511545475889040963, guid: 13f16bacd37202c47adf5a97be272fe5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -88,14 +89,14 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &4232539280088189154
-BoxCollider2D:
+--- !u!70 &5069515033994419270
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7818202212861745312}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -123,14 +124,20 @@ BoxCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0.05847355, y: 0, z: 0.060278285, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.3118589, y: 0.4243955}
-    newSize: {x: 2.4530575, y: 1.2822509}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 2
-    adaptiveTiling: 1
-  m_AutoTiling: 1
-  m_Size: {x: 0.3, y: 1}
-  m_EdgeRadius: 0
+  m_Size: {x: 2.4530575, y: 1.2822509}
+  m_Direction: 1
+--- !u!114 &3693005202153504319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7818202212861745312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ac18a152d4d2894ea7e50357483b550, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 4805437541404007957}
+  boxCollider: {fileID: 0}
+  capsuleCollider: {fileID: 5069515033994419270}

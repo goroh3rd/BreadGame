@@ -56,7 +56,7 @@ public class BreadManager : MonoBehaviour // パンの生成、管理を行うクラス
 {
     public BreadType type;
     public Vector3 pos;
-    public bool baked;
+    public bool baked = true;
     public GrabType grabType;
     public bool isGoal = false;
     public BreadData(BreadType type, Vector3 pos, bool baked = true, GrabType grabType = GrabType.Released)

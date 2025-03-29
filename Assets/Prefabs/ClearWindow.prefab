@@ -336,8 +336,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u30AF\u30EA\u30A2\u30BF\u30A4\u30E0\uFF1A\n\u9CF4\u3089\u3057\u305F\u56DE\u6570\uFF1A"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c3b9313d1f75c3c4da002520c26937c4, type: 2}
-  m_sharedMaterial: {fileID: 7303192680270012878, guid: c3b9313d1f75c3c4da002520c26937c4, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 71920242b6c2f8a44b8fa706826641f9, type: 2}
+  m_sharedMaterial: {fileID: -7563105525707212386, guid: 71920242b6c2f8a44b8fa706826641f9, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -500,6 +500,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvasGroup: {fileID: 8449129870174950210}
   stageSelectScene: StageSelect
+  retryButton: {fileID: 1129387714993927190}
+  stageSelectButton: {fileID: 7033118444788196133}
+  resultText: {fileID: 0}
 --- !u!225 &8449129870174950210
 CanvasGroup:
   m_ObjectHideFlags: 0

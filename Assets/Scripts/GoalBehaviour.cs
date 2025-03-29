@@ -5,6 +5,7 @@ using System.Linq;
 
 public class GoalBehaviour : MonoBehaviour
 {
+    [SerializeField] private StageManager stageManager;
     [SerializeField] private BreadManager manager;
     [SerializeField] private BreadImageManager imageManager;
     [SerializeField] private BoxCollider2D goalCol;
@@ -40,6 +41,7 @@ public class GoalBehaviour : MonoBehaviour
     }
     public void Init()
     {
+        this.stageManager = FindAnyObjectByType<StageManager>();
         this.manager = FindAnyObjectByType<BreadManager>();
         this.clearWindow = FindAnyObjectByType<ClearWindowBehaviour>();
         //fences.ForEach(f => f.Adjust(this.transform.position));
@@ -61,7 +63,8 @@ public class GoalBehaviour : MonoBehaviour
             Debug.Log("Goal Completed");
             if (manager.Breads.All(b => b.Data.isGoal))
             {
-                StartCoroutine(GoalCompleted(1f));
+                stageManager.GoalCompleted();
+                StartCoroutine(GoalCompleted(0.8f));
             }
         }
     }

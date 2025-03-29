@@ -28,7 +28,7 @@ public class BreadBehaviour : MonoBehaviour
         float pixelsPerUnit = spriteRenderer.sprite.pixelsPerUnit;
         float width = (pixelWidth / pixelsPerUnit) * this.transform.localScale.x;
         float height = (pixelHeight / pixelsPerUnit) * this.transform.localScale.y;
-        breadCol.radius = width / 2.5f;
+        breadCol.radius = Mathf.Max(width, height) / 2.5f;
         this.breadRb.AddForce(new Vector2(Random.Range(-0.01f, 0.01f), Random.Range(-0.01f, 0.01f)), ForceMode2D.Impulse);
         breadAnimator.Play("Poping", 0, Random.Range(0f, breadAnimator.GetCurrentAnimatorStateInfo(0).length) / breadAnimator.GetCurrentAnimatorStateInfo(0).length);
     }
@@ -64,6 +64,7 @@ public class BreadBehaviour : MonoBehaviour
     }
     public void Bake()
     {
+        if (this.data.baked) return;
         data.Bake();
         spriteRenderer.sprite = imageManager.GetBakedImage(data.type);
         GameObject panticle = Instantiate(this.panticle, this.transform.position, Quaternion.identity);
@@ -101,5 +102,6 @@ public class BreadBehaviour : MonoBehaviour
         this.spriteRenderer.sprite = data.baked ? imageManager.GetBakedImage(data.type) : imageManager.GetRawImage(data.type);
         this.transform.position = initialState.pos;
         this.breadRb.linearVelocity = Vector2.zero;
+        this.Init(this.Data, FindAnyObjectByType<BreadManager>());
     }
 }
