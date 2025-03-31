@@ -16,6 +16,7 @@ public class StageSelectAnimation : MonoBehaviour // ƒXƒe[ƒW‚ª‘I‚Î‚ê‚½‚Æ‚«‚ÌƒAƒ
     [SerializeField] private float transitionDelay = 2f;
     [SerializeField] private string nextScene = "";
     private bool isAnimating = false;
+    public bool IsAnimating => isAnimating;
     private GameObject[,] images;
 
     public void SetNextScene(string sceneName)
@@ -72,6 +73,7 @@ public class StageSelectAnimation : MonoBehaviour // ƒXƒe[ƒW‚ª‘I‚Î‚ê‚½‚Æ‚«‚ÌƒAƒ
         }
         yield return new WaitForSeconds(disappearDuration);
         foreach (var img in images) Destroy(img);
+        isAnimating = false;
         Destroy(this.gameObject);
     }
 }

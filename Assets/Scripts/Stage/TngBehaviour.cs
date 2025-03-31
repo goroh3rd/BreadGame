@@ -28,12 +28,12 @@ public class TngBehaviour : MonoBehaviour
     {
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         this.transform.position = new Vector3(mousePos.x, mousePos.y, 0);
-        if (Input.GetMouseButtonDown(0) && !stageManager.IsGoalCompleted)
+        if (Input.GetMouseButtonDown(0) && stageManager.IsPlaying)
         {
             PushBread(left.transform.position);
             stageManager.AddClickCount();
         }
-        if (Input.GetMouseButtonDown(1) && !stageManager.IsGoalCompleted)
+        if (Input.GetMouseButtonDown(1) && stageManager.IsPlaying)
         {
             PushBread(right.transform.position);
             stageManager.AddClickCount();
