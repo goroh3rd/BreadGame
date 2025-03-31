@@ -11,6 +11,7 @@ public class ClearWindowBehaviour : MonoBehaviour
     [SerializeField] private GameObject retryButton;
     [SerializeField] private GameObject stageSelectButton;
     [SerializeField] private TextMeshProUGUI resultText;
+    [SerializeField] private StageSelectAnimation stageSelectAnimation;
     private Transform initialPlace;
     private StageManager stageManager;
     private void Start()
@@ -23,7 +24,7 @@ public class ClearWindowBehaviour : MonoBehaviour
     }
     public void Appear()
     {
-        resultText.text = $"クリアタイム : {stageManager.StaegTime.ToString("F2")}秒\nクリック数 : {stageManager.ClickCount}回";
+        resultText.text = $"クリアタイム : {stageManager.StageTime.ToString("F2")}秒\nクリック数 : {stageManager.ClickCount}回";
         retryButton.SetActive(true);
         stageSelectButton.SetActive(true);
         this.canvasGroup.DOFade(1, 0.5f);
@@ -41,5 +42,10 @@ public class ClearWindowBehaviour : MonoBehaviour
     public void StageSelect()
     {
         SceneManager.LoadScene(stageSelectScene);
+    }
+    public void Return()
+    {
+        stageSelectAnimation.transform.parent = null;
+        stageSelectAnimation.LoadScene(stageSelectScene);
     }
 }

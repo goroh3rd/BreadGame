@@ -613,6 +613,7 @@ Transform:
   - {fileID: 2994998306113967687}
   - {fileID: 3889824806071006179}
   - {fileID: 3103120035833512302}
+  - {fileID: 6858083888279489088}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &385515719958253010
@@ -696,6 +697,79 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 8331830374090319029, guid: a069611d59a7b7a4da9b357df6f398b6, type: 3}
   m_PrefabInstance: {fileID: 385515719958253010}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1171013057511436590
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 7870020599777606832}
+    m_Modifications:
+    - target: {fileID: 5723099713963211630, guid: 416e74dd6f6db3c4492c34ece147b2c5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.72
+      objectReference: {fileID: 0}
+    - target: {fileID: 5723099713963211630, guid: 416e74dd6f6db3c4492c34ece147b2c5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.71
+      objectReference: {fileID: 0}
+    - target: {fileID: 5723099713963211630, guid: 416e74dd6f6db3c4492c34ece147b2c5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5723099713963211630, guid: 416e74dd6f6db3c4492c34ece147b2c5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5723099713963211630, guid: 416e74dd6f6db3c4492c34ece147b2c5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5723099713963211630, guid: 416e74dd6f6db3c4492c34ece147b2c5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5723099713963211630, guid: 416e74dd6f6db3c4492c34ece147b2c5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5723099713963211630, guid: 416e74dd6f6db3c4492c34ece147b2c5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5723099713963211630, guid: 416e74dd6f6db3c4492c34ece147b2c5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5723099713963211630, guid: 416e74dd6f6db3c4492c34ece147b2c5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6043102081052398099, guid: 416e74dd6f6db3c4492c34ece147b2c5, type: 3}
+      propertyPath: m_Name
+      value: StageTransition
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 416e74dd6f6db3c4492c34ece147b2c5, type: 3}
+--- !u!114 &4882208267883610461 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6017179253705912435, guid: 416e74dd6f6db3c4492c34ece147b2c5, type: 3}
+  m_PrefabInstance: {fileID: 1171013057511436590}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 086d74875c674b540bbbb74f4b748017, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &6858083888279489088 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5723099713963211630, guid: 416e74dd6f6db3c4492c34ece147b2c5, type: 3}
+  m_PrefabInstance: {fileID: 1171013057511436590}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1655635445324085886
 PrefabInstance:
@@ -935,6 +1009,14 @@ PrefabInstance:
       propertyPath: resultText
       value: 
       objectReference: {fileID: 1001916424866103884}
+    - target: {fileID: -2794499953513953346, guid: 335f2eb671832b340b377c6e735dee64, type: 3}
+      propertyPath: stageSelectAnimation
+      value: 
+      objectReference: {fileID: 4882208267883610461}
+    - target: {fileID: 610445800059521018, guid: 335f2eb671832b340b377c6e735dee64, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Return
+      objectReference: {fileID: 0}
     - target: {fileID: 4159311067206757275, guid: 335f2eb671832b340b377c6e735dee64, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

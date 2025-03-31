@@ -8,18 +8,18 @@ public class StageManager : MonoBehaviour
     [SerializeField] BreadManager breadManager;
     [SerializeField] GoalManager goalManager;
     [SerializeField] TextMeshProUGUI timeText;
-    private bool isGoalCompleted = false;
-    public bool IsGoalCompleted => isGoalCompleted;
+    private bool isPlaying = false;
+    public bool IsGoalCompleted => isPlaying;
     private int clickCount = 0;
     public int ClickCount => clickCount;
     private float stageTime = 0;
-    public float StaegTime => stageTime;
+    public float StageTime => stageTime;
     private void Update()
     {
-        if (!isGoalCompleted) stageTime += Time.deltaTime;
+        if (isPlaying) stageTime += Time.deltaTime;
         timeText.text = $"ƒ^ƒCƒ€ : {stageTime.ToString("F2")}";
-        if (Input.GetKeyDown(KeyCode.R) && !isGoalCompleted) ResetStage();
-        if (Input.GetKeyDown(KeyCode.Escape) && !isGoalCompleted) SceneManager.LoadScene("StageSelect");
+        if (Input.GetKeyDown(KeyCode.R) && !isPlaying) ResetStage();
+        if (Input.GetKeyDown(KeyCode.Escape) && !isPlaying) SceneManager.LoadScene("StageSelect");
     }
     public void AddClickCount()
     {
@@ -36,7 +36,7 @@ public class StageManager : MonoBehaviour
         this.stageTime = 0;
         this.clickCount = 0;
         ResetAllBreads();
-        isGoalCompleted = false;
+        isPlaying = false;
     }
     private void GetInitialState()
     {
@@ -48,6 +48,6 @@ public class StageManager : MonoBehaviour
     }
     public void GoalCompleted()
     {
-        isGoalCompleted = true;
+        isPlaying = true;
     }
 }
