@@ -26,6 +26,7 @@ public class StageSelectAnimation : MonoBehaviour // ƒXƒe[ƒW‚ª‘I‚Î‚ê‚½‚Æ‚«‚ÌƒAƒ
     public void LoadScene(string sceneName)
     {
         if (isAnimating) return;
+        this.transform.parent = null;
         isAnimating = true;
         SetNextScene(sceneName);
         DontDestroyOnLoad(this);
@@ -58,6 +59,7 @@ public class StageSelectAnimation : MonoBehaviour // ƒXƒe[ƒW‚ª‘I‚Î‚ê‚½‚Æ‚«‚ÌƒAƒ
                 yield return new WaitForSeconds(transitionDelay / (rows * cols));
             }
         }
+        yield return new WaitForSeconds(appearDuration);
         SceneManager.LoadSceneAsync(nextScene).completed += _ => StartCoroutine(this.RemoveImages());
     }
 

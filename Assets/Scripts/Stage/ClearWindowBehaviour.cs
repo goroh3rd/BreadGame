@@ -45,7 +45,6 @@ public class ClearWindowBehaviour : MonoBehaviour
     }
     public void Return()
     {
-        stageSelectAnimation.transform.parent = null;
         stageSelectAnimation.LoadScene(stageSelectScene);
     }
 }

@@ -2,13 +2,14 @@ using UnityEngine;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine.SceneManagement;
+using System.Linq;
 
 public class StageManager : MonoBehaviour
 {
     [SerializeField] BreadManager breadManager;
     [SerializeField] GoalManager goalManager;
     [SerializeField] TextMeshProUGUI timeText;
-    private StageSelectAnimation stageSelectAnimation;
+    private List<StageSelectAnimation> stageSelectAnimation;
     private bool isPlaying = false;
     public bool IsPlaying => isPlaying;
     private int clickCount = 0;
@@ -16,9 +17,18 @@ public class StageManager : MonoBehaviour
     private float stageTime = 0;
     public float StageTime => stageTime;
     private bool start = false;
+    private void Start()
+    {
+        stageSelectAnimation = FindObjectsByType<StageSelectAnimation>(FindObjectsSortMode.None)
+            .Where(obj => obj.gameObject.scene.name != null && obj.gameObject.scene.name == "DontDestroyOnLoad")
+            .ToList();
+        this.stageTime = 0;
+        this.clickCount = 0;
+        GetInitialState();
+    }
     private void Update()
     {
-        if (!stageSelectAnimation.IsAnimating && !start)
+        if (!stageSelectAnimation[0].IsAnimating && !start)
         {
             isPlaying = true;
             start = true;
@@ -26,18 +36,15 @@ public class StageManager : MonoBehaviour
         if (isPlaying) stageTime += Time.deltaTime;
         timeText.text = $"ƒ^ƒCƒ€ : {stageTime.ToString("F2")}";
         if (Input.GetKeyDown(KeyCode.R) && isPlaying) ResetStage();
-        if (Input.GetKeyDown(KeyCode.Escape) && isPlaying) SceneManager.LoadScene("StageSelect");
+        if (Input.GetKeyDown(KeyCode.Escape) && isPlaying)
+        {
+            StageSelectAnimation stageSelectAnimation = FindAnyObjectByType<StageSelectAnimation>();
+            stageSelectAnimation.LoadScene("StageSelect");
+        }
     }
     public void AddClickCount()
     {
         clickCount++;
-    }
-    private void Start()
-    {
-        stageSelectAnimation = FindAnyObjectByType<StageSelectAnimation>();
-        this.stageTime = 0;
-        this.clickCount = 0;
-        GetInitialState();
     }
     public void ResetStage()
     {
