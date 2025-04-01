@@ -30,7 +30,7 @@ public class StageManager : MonoBehaviour
     }
     private void Update()
     {
-        if (!isGoalCompleted && !start && stageSelectAnimation.Count == 0) // ステージから直接playモードに移行するとstageSelectAnimationが取得できないため
+        if (!isGoalCompleted && !start && stageSelectAnimation.Count == 0) // ステージから直接playモードに移行するとstageSelectAnimationが取得できず下のif文でエラーが返ってくる
         {
             isPlaying = true;
             start = true;
