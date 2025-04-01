@@ -13,6 +13,7 @@ public class StageManager : MonoBehaviour
     private bool isPlaying = false;
     public bool IsPlaying => isPlaying;
     private int clickCount = 0;
+    private bool isGoalCompleted = false;
     public int ClickCount => clickCount;
     private float stageTime = 0;
     public float StageTime => stageTime;
@@ -24,11 +25,17 @@ public class StageManager : MonoBehaviour
             .ToList();
         this.stageTime = 0;
         this.clickCount = 0;
+        this.isGoalCompleted = false;
         GetInitialState();
     }
     private void Update()
     {
-        if (!stageSelectAnimation[0].IsAnimating && !start)
+        if (!isGoalCompleted && !start && stageSelectAnimation.Count == 0) // ステージから直接playモードに移行するとstageSelectAnimationが取得できないため
+        {
+            isPlaying = true;
+            start = true;
+        }
+        if (!isGoalCompleted && !start && !stageSelectAnimation[0].IsAnimating)
         {
             isPlaying = true;
             start = true;
@@ -64,5 +71,6 @@ public class StageManager : MonoBehaviour
     public void GoalCompleted()
     {
         isPlaying = false;
+        isGoalCompleted = true;
     }
 }
