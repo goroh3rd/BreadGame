@@ -38,7 +38,7 @@ public class TngBehaviour : MonoBehaviour
             PushBread(right.transform.position);
             stageManager.AddClickCount();
         }
-        // ƒCƒJ
+        // •‰‚ÌˆâŽY
         //if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
         //{
         //    clickTime = Time.time;
