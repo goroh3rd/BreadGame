@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class BreadBehaviour : MonoBehaviour
 {
+    [SerializeField] StageManager stageManager;
     [SerializeField] SpriteRenderer spriteRenderer;
     [SerializeField] Rigidbody2D breadRb;
     [SerializeField] CircleCollider2D breadCol;
@@ -21,6 +22,7 @@ public class BreadBehaviour : MonoBehaviour
         this.initialState = new BreadState(data, this.transform.position);
         this.manager = manager;
         this.imageManager = FindAnyObjectByType<BreadImageManager>();
+        this.stageManager = FindAnyObjectByType<StageManager>();
         spriteRenderer.sprite = data.baked ? imageManager.GetBakedImage(data.type) : imageManager.GetRawImage(data.type);
         Rect rect = spriteRenderer.sprite.rect;
         float pixelWidth = rect.width;
@@ -43,6 +45,16 @@ public class BreadBehaviour : MonoBehaviour
         {
             manager.BakeBread(this);
         }
+        if (collision.CompareTag("Goal"))
+        {
+            GoalBehaviour goal = collision.GetComponent<GoalBehaviour>();
+            if (goal.Data.type == this.data.type)
+            {
+                goal.EnteredBreads.Add(this.breadCol);
+                this.data.isGoal = true;
+                if (this.data.baked) SetGoal();
+            }
+        }
     }
     public void SetGoal()
     {
@@ -53,6 +65,7 @@ public class BreadBehaviour : MonoBehaviour
         ParticleSystem particleSystem = particle.GetComponent<ParticleSystem>();
         particleSystem.textureSheetAnimation.SetSprite(0, star);
         particleSystem.Play();
+        stageManager.CheckAllGoalCompleted();
     }
     public void UnsetGoal()
     {
@@ -73,6 +86,8 @@ public class BreadBehaviour : MonoBehaviour
         ParticleSystem particleSystem = panticle.GetComponent<ParticleSystem>();
         particleSystem.textureSheetAnimation.SetSprite(0, smoke);
         particleSystem.Play();
+        if (this.data.isGoal) SetGoal();
+        stageManager.CheckAllGoalCompleted();
     }
     public void Unbake() // ‘½•ªŽg‚í‚È‚¢
     {

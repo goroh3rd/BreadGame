@@ -2,12 +2,14 @@ using NUnit.Framework;
 using UnityEngine;
 using System.Collections.Generic;
 using DG.Tweening;
+using Unity.VisualScripting;
 
 public class EntityMover : MonoBehaviour
 {
     [SerializeField] private List<Vector2> wayPoint;
     [SerializeField] private float speed;
     [SerializeField] private bool isLoop;
+    [SerializeField] private int loopStartIndex = 0;
     private int currentWayPointIndex;
     private Vector2 currentWayPoint;
     private void Start()
@@ -18,7 +20,7 @@ public class EntityMover : MonoBehaviour
     }
     private void Move(Vector2 point)
     {
-        this.transform.DOMove(point, speed).OnComplete(() =>
+        this.transform.DOMove(point, Vector2.Distance(this.transform.position, point) / speed).SetEase(Ease.Linear).OnComplete(() =>
         {
             currentWayPointIndex++;
             if (currentWayPointIndex < wayPoint.Count)
@@ -27,7 +29,15 @@ public class EntityMover : MonoBehaviour
             }
             else if (isLoop)
             {
-                currentWayPointIndex = 0;
+                if (0 <= loopStartIndex && loopStartIndex <= wayPoint.Count)
+                {
+                    currentWayPointIndex = loopStartIndex;
+                }
+                else
+                {
+                    Debug.LogError("Invalid loop start index");
+                    currentWayPointIndex = 0;
+                }
                 Move(wayPoint[currentWayPointIndex]);
             }
         });

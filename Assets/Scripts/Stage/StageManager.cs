@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine.SceneManagement;
 using System.Linq;
+using System.Collections;
+using DG.Tweening;
 
 public class StageManager : MonoBehaviour
 {
     [SerializeField] BreadManager breadManager;
     [SerializeField] GoalManager goalManager;
     [SerializeField] TextMeshProUGUI timeText;
+    [SerializeField] ClearWindowBehaviour clearWindow;
     private List<StageSelectAnimation> stageSelectAnimation;
     private bool isPlaying = false;
     public bool IsPlaying => isPlaying;
@@ -46,8 +49,27 @@ public class StageManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape) && isPlaying)
         {
             StageSelectAnimation stageSelectAnimation = FindAnyObjectByType<StageSelectAnimation>();
+            DOTween.KillAll();
             stageSelectAnimation.LoadScene("StageSelect");
         }
+    }
+    public bool CheckAllConteins(GoalBehaviour goal)
+    {
+        return breadManager.Breads.Where(b => b.Data.type == goal.Data.type).All(m => goal.EnteredBreads.Select(e => e.gameObject).Contains(m.gameObject));
+    }
+    public void CheckAllGoalCompleted()
+    {
+        if (breadManager.Breads.All(b => b.Data.isGoal && b.Data.baked))
+        {
+            StageCompleted();
+            StartCoroutine(GoalCompleted(1.5f));
+        }
+    }
+    public IEnumerator GoalCompleted(float wait)
+    {
+        Debug.Log("All Goal Completed");
+        yield return new WaitForSeconds(wait);
+        clearWindow.Appear();
     }
     public void AddClickCount()
     {
@@ -55,6 +77,8 @@ public class StageManager : MonoBehaviour
     }
     public void ResetStage()
     {
+        DOTween.KillAll();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         this.stageTime = 0;
         this.clickCount = 0;
         ResetAllBreads();
@@ -68,8 +92,9 @@ public class StageManager : MonoBehaviour
     {
         breadManager.Breads.ForEach(bread => bread.ResetBread());
     }
-    public void GoalCompleted()
+    public void StageCompleted()
     {
+        DOTween.KillAll();
         isPlaying = false;
         isGoalCompleted = true;
     }

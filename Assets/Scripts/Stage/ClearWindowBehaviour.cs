@@ -12,12 +12,12 @@ public class ClearWindowBehaviour : MonoBehaviour
     [SerializeField] private GameObject stageSelectButton;
     [SerializeField] private TextMeshProUGUI resultText;
     [SerializeField] private StageSelectAnimation stageSelectAnimation;
-    private Transform initialPlace;
+    private Vector3 initialPlace;
     private StageManager stageManager;
     private void Start()
     {
         this.canvasGroup.alpha = 0;
-        initialPlace = this.transform;
+        initialPlace = this.transform.localPosition;
         retryButton.SetActive(false);
         stageSelectButton.SetActive(false);
         this.stageManager = FindAnyObjectByType<StageManager>();
@@ -32,10 +32,9 @@ public class ClearWindowBehaviour : MonoBehaviour
     }
     public void Retry()
     {
-        this.transform.localPosition = initialPlace.position;
+        this.transform.localPosition = initialPlace;
         retryButton.SetActive(false);
         stageSelectButton.SetActive(false);
-        this.transform.position = initialPlace.position;
         this.canvasGroup.alpha = 0;
         stageManager?.ResetStage();
     }

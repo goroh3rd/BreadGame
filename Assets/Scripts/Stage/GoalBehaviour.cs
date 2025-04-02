@@ -20,12 +20,12 @@ public class GoalBehaviour : MonoBehaviour
     [SerializeField] private SpriteRenderer breadImageRenderer;
     private enum GoalOpenDirection { Top, Bottom, Left, Right }
     private List<Collider2D> enteredBreads = new();
+    public List<Collider2D> EnteredBreads => enteredBreads;
     [System.Serializable]
     public class GoalData
     {
         public BreadType type;
         public int count;
-        public bool isCompleted;
         public GoalData(BreadType type)
         {
             this.type = type;
@@ -48,26 +48,26 @@ public class GoalBehaviour : MonoBehaviour
         //fences.Single(f => (int)f.placement == (int)openDirection).gameObject.SetActive(false);
         AdjusBreadImage();
     }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (!collision.CompareTag("Pan")) return;
-        BreadBehaviour bread = collision.GetComponent<BreadBehaviour>();
-        if (!bread.Data.baked) return;
-        enteredBreads.Add(collision);
-        if (bread.Data.type == this.data.type)
-        {
-            bread.SetGoal();
-        }
-        if (CheckAllConteins(this.data.type))
-        {
-            Debug.Log("Goal Completed");
-            if (manager.Breads.All(b => b.Data.isGoal))
-            {
-                stageManager.GoalCompleted();
-                StartCoroutine(GoalCompleted(0.8f));
-            }
-        }
-    }
+    //private void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    if (!collision.CompareTag("Pan")) return;
+    //    BreadBehaviour bread = collision.GetComponent<BreadBehaviour>();
+    //    if (!bread.Data.baked) return;
+    //    enteredBreads.Add(collision);
+    //    if (bread.Data.type == this.data.type)
+    //    {
+    //        bread.SetGoal();
+    //    }
+    //    if (stageManager.CheckAllConteins(this))
+    //    {
+    //        Debug.Log("Goal Completed");
+    //        if (manager.Breads.All(b => b.Data.isGoal))
+    //        {
+    //            stageManager.StageCompleted();
+    //            StartCoroutine(stageManager.GoalCompleted(0.8f));
+    //        }
+    //    }
+    //}
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (!collision.CompareTag("Pan")) return;
@@ -77,16 +77,6 @@ public class GoalBehaviour : MonoBehaviour
         {
             bread.UnsetGoal();
         }
-    }
-    private bool CheckAllConteins(BreadType type)
-    {
-        return manager.Breads.Where(b => b.Data.type == type).All(m => enteredBreads.Select(e => e.gameObject).Contains(m.gameObject));
-    }
-    private IEnumerator GoalCompleted(float wait)
-    {
-        Debug.Log("All Goal Completed");
-        yield return new WaitForSeconds(wait);
-        clearWindow.Appear();
     }
     private void AdjusBreadImage()
     {
