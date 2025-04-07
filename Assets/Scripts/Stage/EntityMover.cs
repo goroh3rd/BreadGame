@@ -10,10 +10,14 @@ public class EntityMover : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private bool isLoop;
     [SerializeField] private int loopStartIndex = 0;
+    [SerializeField, HideInInspector] private bool isReverse;
+    [SerializeField, HideInInspector] private bool returnToStartImmediately;
     private int currentWayPointIndex;
     private Vector2 currentWayPoint;
+    private bool reversing = false;
     private void Start()
     {
+        this.transform.position = wayPoint[0];
         currentWayPointIndex = 0;
         currentWayPoint = wayPoint[currentWayPointIndex];
         Move(currentWayPoint);
@@ -29,17 +33,42 @@ public class EntityMover : MonoBehaviour
             }
             else if (isLoop)
             {
-                if (0 <= loopStartIndex && loopStartIndex <= wayPoint.Count)
+                if (isReverse)
                 {
-                    currentWayPointIndex = loopStartIndex;
+                    if (reversing)
+                    {
+                        currentWayPointIndex = wayPoint.Count - 1;
+                        reversing = false;
+                    }
+                    else
+                    {
+                        currentWayPointIndex = 0;
+                        reversing = true;
+                    }
+                }
+                else if (returnToStartImmediately)
+                {
+                    currentWayPointIndex = 0;
+                    this.transform.position = wayPoint[currentWayPointIndex];
                 }
                 else
                 {
-                    Debug.LogError("Invalid loop start index");
-                    currentWayPointIndex = 0;
+                    if (0 <= loopStartIndex && loopStartIndex <= wayPoint.Count)
+                    {
+                        currentWayPointIndex = loopStartIndex;
+                    }
+                    else
+                    {
+                        Debug.LogError("Invalid loop start index");
+                        currentWayPointIndex = 0;
+                    }
                 }
                 Move(wayPoint[currentWayPointIndex]);
             }
         });
+    }
+    public void AddCurrentPositionToWayPoint()
+    {
+        wayPoint.Add(this.transform.position);
     }
 }
