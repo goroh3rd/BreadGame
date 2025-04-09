@@ -4,7 +4,7 @@ using DG.Tweening;
 
 public class EntityMover : MonoBehaviour
 {
-    [SerializeField] private List<Vector2> wayPoint;
+    [SerializeField] private List<Vector2> wayPoint = new();
     [SerializeField] private float speed;
     [SerializeField] private int initialWayPointIndex = 0;
     [SerializeField] private bool isLoop;
