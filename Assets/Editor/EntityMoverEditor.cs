@@ -13,7 +13,7 @@ public class EntityMoverEditor : Editor
         SerializedProperty returnToStartImmediately = serializedObject.FindProperty("returnToStartImmediately");
 
         EditorGUI.BeginChangeCheck();
-        EditorGUILayout.PropertyField(isReverse, new GUIContent("Is Reverse"));
+        EditorGUILayout.PropertyField(isReverse, new GUIContent("Reverse"));
         if (EditorGUI.EndChangeCheck())
         {
             if (isReverse.boolValue)
@@ -23,7 +23,7 @@ public class EntityMoverEditor : Editor
         }
 
         EditorGUI.BeginChangeCheck();
-        EditorGUILayout.PropertyField(returnToStartImmediately, new GUIContent("Return To Start Immediately"));
+        EditorGUILayout.PropertyField(returnToStartImmediately, new GUIContent("Return Immediately"));
         if (EditorGUI.EndChangeCheck())
         {
             if (returnToStartImmediately.boolValue)
@@ -50,43 +50,4 @@ public class EntityMoverEditor : Editor
         DrawDefaultInspector();
 
     }
-
-    //public override void OnInspectorGUI()
-    //{
-    //    EditorGUI.BeginChangeCheck();
-
-    //    SerializedProperty isReverse = serializedObject.FindProperty("isReverse");
-    //    EditorGUILayout.PropertyField(isReverse, new GUIContent("Is Reverse"), false);
-    //    SerializedProperty returnToStartImmediately = serializedObject.FindProperty("returnToStartImmediately");
-    //    EditorGUILayout.PropertyField(returnToStartImmediately, new GUIContent("Return To Start Immediately"), false);
-
-    //    if (EditorGUI.EndChangeCheck())
-    //    {
-    //        bool oldisReverseValue = isReverse.boolValue;
-    //        bool oldreturnToStartImmediatelyValue = returnToStartImmediately.boolValue;
-
-    //        if (oldisReverseValue != isReverse.boolValue)
-    //        {
-    //            if (isReverse.boolValue)
-    //            {
-    //                returnToStartImmediately.boolValue = false;
-    //            }
-    //        }
-    //        else if (oldreturnToStartImmediatelyValue != returnToStartImmediately.boolValue)
-    //        {
-    //            if (returnToStartImmediately.boolValue)
-    //            {
-    //                isReverse.boolValue = false;
-    //            }
-    //        }
-    //    }
-
-    //    DrawDefaultInspector();
-    //    EntityMover entityMover = (EntityMover)target;
-    //    // オブジェクトの現在位置をWayPointに追加するボタン
-    //    if (GUILayout.Button("Add Current Position to WayPoint"))
-    //    {
-    //        entityMover.AddCurrentPositionToWayPoint();
-    //    }
-    //}
 }

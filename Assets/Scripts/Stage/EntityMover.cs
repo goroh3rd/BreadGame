@@ -1,8 +1,6 @@
-using NUnit.Framework;
 using UnityEngine;
 using System.Collections.Generic;
 using DG.Tweening;
-using Unity.VisualScripting;
 
 public class EntityMover : MonoBehaviour
 {
