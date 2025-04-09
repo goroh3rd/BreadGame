@@ -4,7 +4,6 @@ using UnityEngine.SceneManagement;
 
 public class SelectButtonBehaviour : MonoBehaviour
 {
-    [SerializeField] private int sceneIndex;
     [SerializeField] private Button button;
     [SerializeField] private string scene;
     [SerializeField] private StageSelectAnimation stageSelectAnimation;

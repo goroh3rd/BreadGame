@@ -36,11 +36,17 @@ public class EntityMoverEditor : Editor
 
         EditorGUILayout.Space();
 
+        EditorGUILayout.BeginHorizontal();
         EntityMover entityMover = (EntityMover)target;
-        if (GUILayout.Button("Add Current Position to WayPoint"))
+        if (GUILayout.Button("Add Current Position"))
         {
             entityMover.AddCurrentPositionToWayPoint();
         }
+        if (GUILayout.Button("Set First Position"))
+        {
+            entityMover.SetFirstPosition();
+        }
+        EditorGUILayout.EndHorizontal();
         DrawDefaultInspector();
 
     }

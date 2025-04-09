@@ -8,6 +8,7 @@ public class EntityMover : MonoBehaviour
 {
     [SerializeField] private List<Vector2> wayPoint;
     [SerializeField] private float speed;
+    [SerializeField] private int initialWayPointIndex = 0;
     [SerializeField] private bool isLoop;
     [SerializeField] private int loopStartIndex = 0;
     [SerializeField, HideInInspector] private bool isReverse;
@@ -17,8 +18,8 @@ public class EntityMover : MonoBehaviour
     private bool reversing = false;
     private void Start()
     {
-        this.transform.position = wayPoint[0];
-        currentWayPointIndex = 0;
+        this.transform.position = wayPoint[initialWayPointIndex];
+        currentWayPointIndex = initialWayPointIndex;
         currentWayPoint = wayPoint[currentWayPointIndex];
         Move(currentWayPoint);
     }
@@ -70,5 +71,9 @@ public class EntityMover : MonoBehaviour
     public void AddCurrentPositionToWayPoint()
     {
         wayPoint.Add(this.transform.position);
+    }
+    public void SetFirstPosition()
+    {
+        this.transform.position = wayPoint[initialWayPointIndex];
     }
 }
