@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using System.Collections.Generic;
 using TMPro;
@@ -21,6 +22,7 @@ public class StageManager : MonoBehaviour
     private float stageTime = 0;
     public float StageTime => stageTime;
     private bool start = false;
+    private Coroutine coroutine;
     private void Start()
     {
         stageSelectAnimation = FindObjectsByType<StageSelectAnimation>(FindObjectsSortMode.None)
@@ -59,11 +61,24 @@ public class StageManager : MonoBehaviour
     }
     public void CheckAllGoalCompleted()
     {
-        if (breadManager.Breads.All(b => b.Data.isGoal && b.Data.baked))
+        if (coroutine != null)
         {
-            StageCompleted();
-            StartCoroutine(GoalCompleted(1.5f));
+            StopCoroutine(coroutine);
         }
+        coroutine = StartCoroutine(ExecuteWithDelay(0.5f, () =>
+        {
+            if (breadManager.Breads.All(b => b.Data.isGoal && b.Data.baked))
+            {
+                StageCompleted();
+                StartCoroutine(GoalCompleted(0.5f));
+                coroutine = null;
+            }
+        }));
+    }
+    public IEnumerator ExecuteWithDelay(float delay, Action action)
+    {
+        yield return new WaitForSeconds(delay);
+        action?.Invoke();
     }
     public IEnumerator GoalCompleted(float wait)
     {

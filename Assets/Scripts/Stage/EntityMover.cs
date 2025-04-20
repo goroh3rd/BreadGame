@@ -20,6 +20,7 @@ public class EntityMover : MonoBehaviour
         currentWayPointIndex = initialWayPointIndex;
         currentWayPoint = wayPoint[currentWayPointIndex];
         Move(currentWayPoint);
+        //Time.timeScale = 3;
     }
     private void Move(Vector2 point)
     {
@@ -47,8 +48,9 @@ public class EntityMover : MonoBehaviour
                 }
                 else if (returnToStartImmediately)
                 {
-                    currentWayPointIndex = 0;
-                    this.transform.position = wayPoint[currentWayPointIndex];
+                    currentWayPointIndex = loopStartIndex;
+                    this.transform.position = wayPoint[loopStartIndex];
+                    currentWayPointIndex++;
                 }
                 else
                 {
