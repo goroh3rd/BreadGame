@@ -12,6 +12,8 @@ public class BreadBehaviour : MonoBehaviour
     [SerializeField] private BreadImageManager imageManager;
     [SerializeField] GameObject panticle;
     [SerializeField] private BreadData data;
+    [SerializeField] private float linearDrag = 4.5f;
+    private bool onIce = false;
     public BreadData Data => data;
     private BreadState initialState;
     private BreadManager manager;
@@ -41,6 +43,11 @@ public class BreadBehaviour : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.CompareTag("Ice"))
+        {
+            onIce = true;
+            breadRb.linearDamping = 0.1f;
+        }
         if (collision.CompareTag("Cooker") && manager.CheckCorrectCooker(this.data.type, collision.GetComponent<CookerBehaviour>().type))
         {
             manager.BakeBread(this);
@@ -56,9 +63,43 @@ public class BreadBehaviour : MonoBehaviour
             }
         }
     }
+    private void OnTriggerExit2D(Collider2D collision) // ‹““®‚ÌŠÄŽ‹‚ª•K—v
+    {
+        if (collision.CompareTag("Ice"))
+        {
+            onIce = false;
+            breadRb.linearDamping = linearDrag;
+        }
+        if (collision.CompareTag("Goal"))
+        {
+            GoalBehaviour goal = collision.GetComponent<GoalBehaviour>();
+            if (goal.Data.type == this.data.type)
+            {
+                goal.EnteredBreads.Remove(this.breadCol);
+                this.data.isGoal = false;
+            }
+        }
+    }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (!onIce)
+        {
+            Collider2D[] colliders = Physics2D.OverlapPointAll(this.transform.position);
+            foreach (Collider2D col in colliders)
+            {
+                if (col.CompareTag("Ice"))
+                {
+                    onIce = true;
+                    breadRb.linearDamping = 0.1f;
+                    break;
+                }
+            }
+        }
+    }
     public void SetGoal()
     {
         this.data.isGoal = true;
+        spriteRenderer.color = new Color(0.7f, 0.7f, 0.7f, 1);
         GameObject particle = Instantiate(this.panticle, this.transform.position, Quaternion.identity);
         particle.transform.rotation = Quaternion.Euler(-90, 0, 0);
         particle.SetActive(true);
@@ -70,9 +111,11 @@ public class BreadBehaviour : MonoBehaviour
     public void UnsetGoal()
     {
         this.data.isGoal = false;
+        spriteRenderer.color = new Color(1, 1, 1, 1);
     }
     public void AddForce(Vector3 force)
     {
+        breadRb.totalForce = Vector2.zero;
         breadRb.AddForce(force, ForceMode2D.Impulse);
     }
     public void Bake()
