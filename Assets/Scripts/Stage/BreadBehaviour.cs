@@ -99,7 +99,7 @@ public class BreadBehaviour : MonoBehaviour
     public void SetGoal()
     {
         this.data.isGoal = true;
-        spriteRenderer.color = new Color(0.7f, 0.7f, 0.7f, 1);
+        spriteRenderer.color = new Color(0.5f, 0.5f, 0.5f, 0.8f);
         GameObject particle = Instantiate(this.panticle, this.transform.position, Quaternion.identity);
         particle.transform.rotation = Quaternion.Euler(-90, 0, 0);
         particle.SetActive(true);
@@ -117,6 +117,12 @@ public class BreadBehaviour : MonoBehaviour
     {
         breadRb.totalForce = Vector2.zero;
         breadRb.AddForce(force, ForceMode2D.Impulse);
+    }
+    public void Stop()
+    {
+        breadRb.linearVelocity = Vector2.zero;
+        breadRb.angularVelocity = 0;
+        breadRb.totalForce = Vector2.zero;
     }
     public void Bake()
     {

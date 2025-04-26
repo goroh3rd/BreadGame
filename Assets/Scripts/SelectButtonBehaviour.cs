@@ -6,7 +6,23 @@ public class SelectButtonBehaviour : MonoBehaviour
 {
     [SerializeField] private Button button;
     [SerializeField] private string scene;
+    [SerializeField] private Image image;
+    [SerializeField] private Color completedColor;
+    [SerializeField] private Material completedMaterial;
     [SerializeField] private StageSelectAnimation stageSelectAnimation;
+    private void Start()
+    {
+        if (GlobalData.CompletedStage.Contains(scene))
+        {
+            image.material = completedMaterial;
+            image.color = completedColor;
+        }
+        else
+        {
+            image.material = null;
+            image.color = Color.white;
+        }
+    }
     public void LoadScene()
     {
         stageSelectAnimation.LoadScene(scene);

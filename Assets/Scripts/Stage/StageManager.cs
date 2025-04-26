@@ -110,6 +110,11 @@ public class StageManager : MonoBehaviour
     public void StageCompleted()
     {
         DOTween.KillAll();
+        GlobalData.SetStageCompleted(SceneManager.GetActiveScene().name);
+        breadManager.Breads.ForEach(bread =>
+        {
+            bread.Stop();
+        });
         isPlaying = false;
         isGoalCompleted = true;
     }

@@ -55,7 +55,7 @@ public class StageSelectAnimation : MonoBehaviour // ƒXƒe[ƒW‚ª‘I‚Î‚ê‚½‚Æ‚«‚ÌƒAƒ
                 images[y, x] = image;
 
                 // ƒC[ƒWƒ“ƒO‚ÅŠg‘å
-                image.transform.DOScale(3.5f, appearDuration).SetEase(Ease.OutBack);
+                image.transform.DOScale(4.2f, appearDuration).SetEase(Ease.OutBack);
                 yield return new WaitForSeconds(transitionDelay / (rows * cols));
             }
         }
