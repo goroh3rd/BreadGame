@@ -12,7 +12,7 @@ public class SelectButtonBehaviour : MonoBehaviour
     [SerializeField] private StageSelectAnimation stageSelectAnimation;
     private void Start()
     {
-        if (GlobalData.CompletedStage.Contains(scene))
+        if (PlayerPrefs.GetFloat(scene, -1) != -1)
         {
             image.material = completedMaterial;
             image.color = completedColor;

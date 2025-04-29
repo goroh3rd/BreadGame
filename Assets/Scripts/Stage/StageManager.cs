@@ -117,5 +117,15 @@ public class StageManager : MonoBehaviour
         });
         isPlaying = false;
         isGoalCompleted = true;
+        if (stageTime < PlayerPrefs.GetFloat(SceneManager.GetActiveScene().name)) // 最速タイムを保存
+        {
+            PlayerPrefs.SetFloat(SceneManager.GetActiveScene().name, stageTime);
+            clearWindow.SetNewRecord();
+        }
+        else if (PlayerPrefs.GetFloat(SceneManager.GetActiveScene().name, -1) == -1) // 初回プレイ時に保存
+        {
+            PlayerPrefs.SetFloat(SceneManager.GetActiveScene().name, stageTime);
+            clearWindow.SetNewRecord();
+        }
     }
 }

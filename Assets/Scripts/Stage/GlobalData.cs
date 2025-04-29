@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using UnityEngine;
 
 public static class GlobalData
 {
@@ -17,5 +18,9 @@ public static class GlobalData
             completedStage.Add(index);
         }
     }
-
+    public static void ResetAllRecords()
+    {
+        PlayerPrefs.DeleteAll();
+        completedStage.Clear();
+    }
 }

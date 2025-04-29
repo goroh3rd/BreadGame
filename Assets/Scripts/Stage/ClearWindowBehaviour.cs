@@ -13,6 +13,7 @@ public class ClearWindowBehaviour : MonoBehaviour
     [SerializeField] private StageSelectAnimation stageSelectAnimation;
     private Vector3 initialPlace;
     private StageManager stageManager;
+    private bool newRecord = false;
     private void Start()
     {
         this.canvasGroup.alpha = 0;
@@ -20,10 +21,15 @@ public class ClearWindowBehaviour : MonoBehaviour
         retryButton.SetActive(false);
         stageSelectButton.SetActive(false);
         this.stageManager = FindAnyObjectByType<StageManager>();
+        newRecord = false;
     }
     public void Appear()
     {
-        resultText.text = $"クリアタイム : {stageManager.StageTime.ToString("F2")}秒\nクリック数 : {stageManager.ClickCount}回";
+        resultText.text = $"クリアタイム : {stageManager.StageTime.ToString("F2")}秒\nクリック数 : {stageManager.ClickCount}回\n最速タイム : {PlayerPrefs.GetFloat(SceneManager.GetActiveScene().name).ToString("F2")}秒";
+        if (newRecord)
+        {
+            resultText.text += "<color=red><size=24> 新記録！</size></color>";
+        }
         retryButton.SetActive(true);
         stageSelectButton.SetActive(true);
         this.canvasGroup.DOFade(1, 0.5f);
@@ -44,5 +50,9 @@ public class ClearWindowBehaviour : MonoBehaviour
     public void Return()
     {
         stageSelectAnimation.LoadScene(stageSelectScene);
+    }
+    public void SetNewRecord()
+    {
+        newRecord = true;
     }
 }
