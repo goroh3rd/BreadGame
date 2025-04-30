@@ -11,6 +11,10 @@ public class SelectManager : MonoBehaviour
         {
             reset += Time.deltaTime;
         }
+        else
+        {
+            reset = 0;
+        }
         if (reset > resetTime)
         {
             reset = 0;
