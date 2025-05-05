@@ -10,6 +10,7 @@ public class TngBehaviour : MonoBehaviour
     [SerializeField, Range(0f, 3f)] float range = 1.0f;
     [SerializeField] GameObject left;
     [SerializeField] GameObject right;
+    [SerializeField] GameObject clickParticle;
     private SpriteRenderer leftRenderer;
     private SpriteRenderer rightRenderer;
     private float clickTime;
@@ -32,11 +33,13 @@ public class TngBehaviour : MonoBehaviour
         {
             PushBread(left.transform.position);
             stageManager.AddClickCount();
+            ClickEmit(left);
         }
         if (Input.GetMouseButtonDown(1) && stageManager.IsPlaying)
         {
             PushBread(right.transform.position);
             stageManager.AddClickCount();
+            ClickEmit(right);
         }
         // •‰‚ÌˆâŽY
         //if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
@@ -93,6 +96,10 @@ public class TngBehaviour : MonoBehaviour
         //}
         leftRenderer.color = Input.GetMouseButton(0) ? Color.red : Color.white;
         rightRenderer.color = Input.GetMouseButton(1) ? Color.red : Color.white;
+    }
+    private void ClickEmit(GameObject gameObject)
+    {
+        GameObject particle = Instantiate(clickParticle, gameObject.transform.position, Quaternion.identity);
     }
     private void PushBread(Vector3 pos)
     {
