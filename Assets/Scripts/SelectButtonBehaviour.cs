@@ -38,5 +38,6 @@ public class SelectButtonBehaviour : MonoBehaviour
     public void Click()
     {
         this.transform.localScale = new Vector3(1f, 1f, 1f);
+        StartCoroutine(SoundManager.PlaySE(7, 1f)); // SE‚ð–Â‚ç‚·
     }
 }

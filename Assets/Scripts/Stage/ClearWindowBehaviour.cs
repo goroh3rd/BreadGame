@@ -37,6 +37,7 @@ public class ClearWindowBehaviour : MonoBehaviour
     }
     public void Retry()
     {
+        StartCoroutine(SoundManager.PlaySE(7, 1f)); // SE‚ð–Â‚ç‚·
         this.transform.localPosition = initialPlace;
         retryButton.SetActive(false);
         stageSelectButton.SetActive(false);
@@ -49,6 +50,7 @@ public class ClearWindowBehaviour : MonoBehaviour
     }
     public void Return()
     {
+        StartCoroutine(SoundManager.PlaySE(7, 1f)); // SE‚ð–Â‚ç‚·
         stageSelectAnimation.LoadScene(stageSelectScene);
     }
     public void SetNewRecord()

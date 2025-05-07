@@ -13,6 +13,8 @@ public class StageManager : MonoBehaviour
     [SerializeField] GoalManager goalManager;
     [SerializeField] TextMeshProUGUI timeText;
     [SerializeField] ClearWindowBehaviour clearWindow;
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip clearSound;
     private List<StageSelectAnimation> stageSelectAnimation;
     private bool isPlaying = false;
     public bool IsPlaying => isPlaying;
@@ -23,11 +25,13 @@ public class StageManager : MonoBehaviour
     public float StageTime => stageTime;
     private bool start = false;
     private Coroutine coroutine;
+    private BGM bgm;
     private void Start()
     {
         stageSelectAnimation = FindObjectsByType<StageSelectAnimation>(FindObjectsSortMode.None)
             .Where(obj => obj.gameObject.scene.name != null && obj.gameObject.scene.name == "DontDestroyOnLoad")
             .ToList();
+        //bgm = FindAnyObjectByType<BGM>();
         this.stageTime = 0;
         this.clickCount = 0;
         this.isGoalCompleted = false;
@@ -85,6 +89,7 @@ public class StageManager : MonoBehaviour
         Debug.Log("All Goal Completed");
         yield return new WaitForSeconds(wait);
         clearWindow.Appear();
+        StartCoroutine(SoundManager.PlaySE(6));
     }
     public void AddClickCount()
     {

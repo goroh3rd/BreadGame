@@ -13,6 +13,9 @@ public class BreadBehaviour : MonoBehaviour
     [SerializeField] GameObject panticle;
     [SerializeField] private BreadData data;
     [SerializeField] private float linearDrag = 4.5f;
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip bake;
+    [SerializeField] private AudioClip goal;
     private bool onIce = false;
     public BreadData Data => data;
     private BreadState initialState;
@@ -106,6 +109,8 @@ public class BreadBehaviour : MonoBehaviour
         ParticleSystem particleSystem = particle.GetComponent<ParticleSystem>();
         particleSystem.textureSheetAnimation.SetSprite(0, star);
         particleSystem.Play();
+        //PlaySound(goal);
+        StartCoroutine(SoundManager.PlaySE(1, 0.2f));
         stageManager.CheckAllGoalCompleted();
     }
     public void UnsetGoal()
@@ -135,6 +140,8 @@ public class BreadBehaviour : MonoBehaviour
         ParticleSystem particleSystem = panticle.GetComponent<ParticleSystem>();
         particleSystem.textureSheetAnimation.SetSprite(0, smoke);
         particleSystem.Play();
+        //PlaySound(bake);
+        StartCoroutine(SoundManager.PlaySE(3, 1f));
         if (this.data.isGoal) SetGoal();
         stageManager.CheckAllGoalCompleted();
     }
@@ -167,5 +174,10 @@ public class BreadBehaviour : MonoBehaviour
         this.transform.position = initialState.pos;
         this.breadRb.linearVelocity = Vector2.zero;
         this.Init(this.Data, FindAnyObjectByType<BreadManager>());
+    }
+    private void PlaySound(AudioClip clip)
+    {
+        audioSource.clip = clip;
+        audioSource.Play(0);
     }
 }

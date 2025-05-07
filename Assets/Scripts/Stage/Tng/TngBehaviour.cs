@@ -13,6 +13,8 @@ public class TngBehaviour : MonoBehaviour
     [SerializeField] GameObject clickParticle;
     [SerializeField] List<Color> particleColor;
     [SerializeField] List<float> particleScale;
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip clickSound;
     private SpriteRenderer leftRenderer;
     private SpriteRenderer rightRenderer;
     private float clickTime;
@@ -36,12 +38,14 @@ public class TngBehaviour : MonoBehaviour
             PushBread(left.transform.position);
             stageManager.AddClickCount();
             ClickEmit(left);
+            StartCoroutine(SoundManager.PlaySE(0));
         }
         if (Input.GetMouseButtonDown(1) && stageManager.IsPlaying)
         {
             PushBread(right.transform.position);
             stageManager.AddClickCount();
             ClickEmit(right);
+            StartCoroutine(SoundManager.PlaySE(0));
         }
         // •‰‚ÌˆâŽY
         //if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
@@ -151,5 +155,9 @@ public class TngBehaviour : MonoBehaviour
             }
         }
         return null;
+    }
+    private void PlayClickSound()
+    {
+        audioSource.PlayOneShot(clickSound);
     }
 }

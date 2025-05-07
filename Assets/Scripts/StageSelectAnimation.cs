@@ -41,6 +41,7 @@ public class StageSelectAnimation : MonoBehaviour // ƒXƒe[ƒW‚ª‘I‚Î‚ê‚½‚Æ‚«‚ÌƒAƒ
 
         for (int y = 0; y < rows; y++)
         {
+            StartCoroutine(SoundManager.PlaySE(5, 1f)); // SE‚ğ–Â‚ç‚·
             for (int x = 0; x < cols; x++)
             {
                 Vector3 position = startPos + new Vector3(x * spacing, y * spacing, 0);
@@ -60,6 +61,7 @@ public class StageSelectAnimation : MonoBehaviour // ƒXƒe[ƒW‚ª‘I‚Î‚ê‚½‚Æ‚«‚ÌƒAƒ
             }
         }
         yield return new WaitForSeconds(appearDuration);
+        StartCoroutine(SoundManager.PlaySE(5, 1f)); // SE‚ğ–Â‚ç‚·
         SceneManager.LoadSceneAsync(nextScene).completed += _ => StartCoroutine(this.RemoveImages());
     }
 
@@ -67,6 +69,7 @@ public class StageSelectAnimation : MonoBehaviour // ƒXƒe[ƒW‚ª‘I‚Î‚ê‚½‚Æ‚«‚ÌƒAƒ
     {
         for (int y = 0; y < rows; y++)
         {
+            StartCoroutine(SoundManager.PlaySE(5, 1f)); // SE‚ğ–Â‚ç‚·
             for (int x = 0; x < cols; x++)
             {
                 images[y, x].transform.DOScale(0, disappearDuration).SetEase(Ease.InBack);
