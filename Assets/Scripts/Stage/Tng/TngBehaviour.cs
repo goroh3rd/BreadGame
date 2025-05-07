@@ -11,6 +11,8 @@ public class TngBehaviour : MonoBehaviour
     [SerializeField] GameObject left;
     [SerializeField] GameObject right;
     [SerializeField] GameObject clickParticle;
+    [SerializeField] List<Color> particleColor;
+    [SerializeField] List<float> particleScale;
     private SpriteRenderer leftRenderer;
     private SpriteRenderer rightRenderer;
     private float clickTime;
@@ -99,7 +101,13 @@ public class TngBehaviour : MonoBehaviour
     }
     private void ClickEmit(GameObject gameObject)
     {
-        GameObject particle = Instantiate(clickParticle, gameObject.transform.position, Quaternion.identity);
+        //GameObject particle = Instantiate(clickParticle, gameObject.transform.position, Quaternion.identity);
+        for (int i = 0; i < particleColor.Count; i++)
+        {
+            GameObject particle = Instantiate(clickParticle, gameObject.transform.position, Quaternion.identity);
+            particle.GetComponent<ClickParticle>().Init(particleScale[i], particleColor[i]);
+            particle.GetComponent<ParticleSystemRenderer>().sortingOrder = particleColor.Count - i;
+        }
     }
     private void PushBread(Vector3 pos)
     {
