@@ -5,6 +5,7 @@ public class VolumePanelShowing : MonoBehaviour
     [SerializeField] private GameObject scrollbars;
     [SerializeField] private CanvasGroup canvasGroup;
     private bool showing = false;
+    public bool IsShowing => showing;
     private bool isfixed = false;
     private void Start()
     {

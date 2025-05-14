@@ -58,6 +58,9 @@ public class VolumeSliderConroller : MonoBehaviour
     }
     public void PlaySE()
     {
-        StartCoroutine(SoundManager.PlaySE(7, 1f));
+        if (volumePanelShowing.IsShowing)
+        {
+            StartCoroutine(SoundManager.PlaySE(7, 1f));
+        }
     }
 }
