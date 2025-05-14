@@ -17,14 +17,15 @@ public class VolumeSliderConroller : MonoBehaviour
     [SerializeField] private SoundType type;
     [SerializeField] private AudioMixer audioMixer;
     [SerializeField] private Slider Slider;//自分
-    [SerializeField] private TextMeshProUGUI ValueText;
+    //[SerializeField] private TextMeshProUGUI ValueText;
+    [SerializeField] private VolumePanelShowing volumePanelShowing;
     void Start()
     {
         //PlayerPrefsから音量の値を取得してもよいけど取り敢えずコメントアウトしとく
         //結局実装しなかったのでPlayerPrefs使いたかったら自分で追加してね
 
         //ミキサーのvolumeにスライダーのvolumeを入れる
-        switch(type)
+        switch (type)
         {
             case SoundType.BGM:
                 audioMixer.GetFloat("BGM", out float BGMVolume);
@@ -35,15 +36,15 @@ public class VolumeSliderConroller : MonoBehaviour
                 Slider.value = SEVolume;
                 break;
         }
-        
+
     }
 
     public void SetVolume(float volume)
     {
         //スライダーの値が変わるたびに呼ばれる
         //Maxとminが-60と0なのでこういう計算式になっていますが調整したかったら頑張って
-        ValueText.text = ((volume+60)*100/60).ToString("0.0");
-        switch(type)
+        //ValueText.text = ((volume + 60) * 100 / 60).ToString("0.0");
+        switch (type)
         {
             case SoundType.BGM:
                 audioMixer.SetFloat("BGM", volume);
@@ -52,6 +53,11 @@ public class VolumeSliderConroller : MonoBehaviour
                 audioMixer.SetFloat("SE", volume);
                 break;
         }
+        //volumePanelShowing.SetFixed(false);
         //PlayerPrefs.SetFloat("Volume", value);
+    }
+    public void PlaySE()
+    {
+        StartCoroutine(SoundManager.PlaySE(7, 1f));
     }
 }

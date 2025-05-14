@@ -1336,8 +1336,40 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2009380576532252063, guid: d74baad1fea44e947b220b15a7d85325, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2009380576532252063, guid: d74baad1fea44e947b220b15a7d85325, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2009380576532252063, guid: d74baad1fea44e947b220b15a7d85325, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3882645956646661172, guid: d74baad1fea44e947b220b15a7d85325, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3882645956646661172, guid: d74baad1fea44e947b220b15a7d85325, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4308189400459965871, guid: d74baad1fea44e947b220b15a7d85325, type: 3}
       propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4411609877925647099, guid: d74baad1fea44e947b220b15a7d85325, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4411609877925647099, guid: d74baad1fea44e947b220b15a7d85325, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4411609877925647099, guid: d74baad1fea44e947b220b15a7d85325, type: 3}
+      propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4569622978808062511, guid: d74baad1fea44e947b220b15a7d85325, type: 3}
@@ -1346,6 +1378,14 @@ PrefabInstance:
       objectReference: {fileID: 732763160}
     - target: {fileID: 5236406872355556686, guid: d74baad1fea44e947b220b15a7d85325, type: 3}
       propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7698843945035512139, guid: d74baad1fea44e947b220b15a7d85325, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7698843945035512139, guid: d74baad1fea44e947b220b15a7d85325, type: 3}
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7870020599777606832, guid: d74baad1fea44e947b220b15a7d85325, type: 3}
@@ -1392,6 +1432,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StageBase
       objectReference: {fileID: 0}
+    - target: {fileID: 8902899127748231740, guid: d74baad1fea44e947b220b15a7d85325, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 732763160}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
