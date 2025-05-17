@@ -116,10 +116,7 @@ public class StageManager : MonoBehaviour
     {
         DOTween.KillAll();
         GlobalData.SetStageCompleted(SceneManager.GetActiveScene().name);
-        breadManager.Breads.ForEach(bread =>
-        {
-            bread.Stop();
-        });
+        breadManager.Breads.ForEach(bread => bread.Stop());
         isPlaying = false;
         isGoalCompleted = true;
         if (stageTime < PlayerPrefs.GetFloat(SceneManager.GetActiveScene().name)) // Å‘¬ƒ^ƒCƒ€‚ð•Û‘¶
