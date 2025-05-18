@@ -30,6 +30,7 @@ public class SoundManager : MonoBehaviour
         }
 
         instance = this;
+        this.transform.SetParent(null); // 親を解除してシーンのルートに移動
         DontDestroyOnLoad(this.gameObject);
 
         // BGM の AudioSource をリストに追加

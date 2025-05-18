@@ -378,7 +378,7 @@ MonoBehaviour:
   - {fileID: 6301404310326092538, guid: c8dd7ea9649319c4fa302634ef9d87fa, type: 3}
   - {fileID: -3444079554577646773, guid: c8dd7ea9649319c4fa302634ef9d87fa, type: 3}
   - {fileID: -1903969756, guid: c8dd7ea9649319c4fa302634ef9d87fa, type: 3}
-  - {fileID: 1294917863, guid: c8dd7ea9649319c4fa302634ef9d87fa, type: 3}
+  - {fileID: 3960754799907872120, guid: b21de9ae5c5aded41ac5f2c594a46ba1, type: 3}
   - {fileID: 962047841, guid: c8dd7ea9649319c4fa302634ef9d87fa, type: 3}
   - {fileID: 1665249520, guid: c8dd7ea9649319c4fa302634ef9d87fa, type: 3}
   bakedImages:
@@ -386,7 +386,7 @@ MonoBehaviour:
   - {fileID: 8378225185371500638, guid: 2028077055c10a24eabd98bec2262106, type: 3}
   - {fileID: -4906167379763698644, guid: aee0bfe2d3161a441a21895557a4a6a0, type: 3}
   - {fileID: 1727333087660148702, guid: 590a0baab156b8143805d583d214bfdc, type: 3}
-  - {fileID: 2093941788613158730, guid: e1deac488f5a11d4c81bc55373a1f0b1, type: 3}
+  - {fileID: -3356302069181093370, guid: 66092cb6fc7fe5148986e11afba429cf, type: 3}
   - {fileID: -4997370770350388271, guid: 90eabe6f0bdff5b44b8a03234d95d8a7, type: 3}
   - {fileID: 973736656227938702, guid: fee6a2b2793f8174493fc5f9908583fa, type: 3}
 --- !u!1 &2839766684738992183
