@@ -117,10 +117,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1382374810176885223}
+          m_TargetAssemblyTypeName: VolumePanelShowing, Assembly-CSharp
+          m_MethodName: StartIntract
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - eventID: 3
     callback:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 1382374810176885223}
+          m_TargetAssemblyTypeName: VolumePanelShowing, Assembly-CSharp
+          m_MethodName: StopIntract
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &1041194682379844872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -673,6 +701,34 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 1382374810176885223}
+          m_TargetAssemblyTypeName: VolumePanelShowing, Assembly-CSharp
+          m_MethodName: StopIntract
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1382374810176885223}
+          m_TargetAssemblyTypeName: VolumePanelShowing, Assembly-CSharp
+          m_MethodName: StartIntract
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &6695276871410286426
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -754,7 +810,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: cd2850df558fa30478355e5bd5d8a0e5, type: 3}
+  m_Sprite: {fileID: -6601691336363857274, guid: eac710ec03cff0a4fba775e40638de72, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1366,7 +1422,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: cd2850df558fa30478355e5bd5d8a0e5, type: 3}
+  m_Sprite: {fileID: 1384307969618782483, guid: 140daa49351737f46b3cc9bcf967ecda, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1676,7 +1732,8 @@ MonoBehaviour:
   scrollbars: {fileID: 8144658710483769340}
   fillImage: {fileID: 370529756007691815}
   canvasGroup: {fileID: 4247531619432441449}
-  appearDuration: 0.5
+  appearDuration: 0.35
+  intracting: 0
 --- !u!225 &4247531619432441449
 CanvasGroup:
   m_ObjectHideFlags: 0

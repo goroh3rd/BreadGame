@@ -10,6 +10,7 @@ public class VolumePanelShowing : MonoBehaviour
     private float appearTime = 0f;
     private bool showing = false;
     private bool filling = false;
+    public bool intracting = false;
     public bool IsShowing => showing;
     private void Start()
     {
@@ -33,6 +34,30 @@ public class VolumePanelShowing : MonoBehaviour
             scrollbars.SetActive(false);
         }
     }
+    private void LateUpdate()
+    {
+        if (Input.GetMouseButtonDown(0) && showing && !intracting)
+        {
+            HidePanel();
+        }
+    }
+    public void PointerDown()
+    {
+        if (showing) HidePanel();
+        else StartFill();
+    }
+    public void PointerUp()
+    {
+        StopFill();
+    }
+    public void StartIntract()
+    {
+        intracting = true;
+    }
+    public void StopIntract()
+    {
+        intracting = false;
+    }
     private void UpdateWindow()
     {
         if (showing)
@@ -49,15 +74,6 @@ public class VolumePanelShowing : MonoBehaviour
             showing = false;
             return;
         }
-    }
-    public void PointerDown()
-    {
-        if (showing) HidePanel();
-        else StartFill();
-    }
-    public void PointerUp()
-    {
-        StopFill();
     }
     private void HidePanel()
     {
