@@ -2,6 +2,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using DG.Tweening;
 using TMPro;
+using System.Text.RegularExpressions;
+using UnityEngine.Windows;
 
 public class ClearWindowBehaviour : MonoBehaviour
 {
@@ -9,6 +11,7 @@ public class ClearWindowBehaviour : MonoBehaviour
     [SerializeField] private string stageSelectScene;
     [SerializeField] private GameObject retryButton;
     [SerializeField] private GameObject stageSelectButton;
+    [SerializeField] private GameObject nextStageButton;
     [SerializeField] private TextMeshProUGUI resultText;
     [SerializeField] private StageSelectAnimation stageSelectAnimation;
     private Vector3 initialPlace;
@@ -20,6 +23,7 @@ public class ClearWindowBehaviour : MonoBehaviour
         initialPlace = this.transform.localPosition;
         retryButton.SetActive(false);
         stageSelectButton.SetActive(false);
+        nextStageButton.SetActive(false);
         this.stageManager = FindAnyObjectByType<StageManager>();
         newRecord = false;
     }
@@ -32,6 +36,7 @@ public class ClearWindowBehaviour : MonoBehaviour
         }
         retryButton.SetActive(true);
         stageSelectButton.SetActive(true);
+        nextStageButton.SetActive(true);
         this.canvasGroup.DOFade(1, 0.5f);
         this.transform.DOLocalMoveY(0, 0.5f).SetEase(Ease.OutBack);
     }
@@ -41,17 +46,23 @@ public class ClearWindowBehaviour : MonoBehaviour
         this.transform.localPosition = initialPlace;
         retryButton.SetActive(false);
         stageSelectButton.SetActive(false);
+        nextStageButton.SetActive(false);
         this.canvasGroup.alpha = 0;
         stageManager?.ResetStage();
     }
-    public void StageSelect()
-    {
-        SceneManager.LoadScene(stageSelectScene);
-    }
+    //public void StageSelect()
+    //{
+    //    SceneManager.LoadScene(stageSelectScene);
+    //}
     public void Return()
     {
         StartCoroutine(SoundManager.PlaySE(7, 1f)); // SE‚ð–Â‚ç‚·
         stageSelectAnimation.LoadScene(stageSelectScene);
+    }
+    public void NextStage()
+    {
+        StartCoroutine(SoundManager.PlaySE(7, 1f)); // SE‚ð–Â‚ç‚·
+        stageSelectAnimation.LoadScene($"Stage{int.Parse(Regex.Match(SceneManager.GetActiveScene().name, @"\d+").Value) + 1}");
     }
     public void SetNewRecord()
     {

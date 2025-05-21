@@ -530,6 +530,14 @@ PrefabInstance:
       propertyPath: m_text
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 6962924835363204192, guid: c5f93fa44fedf8344860f2f364d64aad, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6962924835363204192, guid: c5f93fa44fedf8344860f2f364d64aad, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -643,6 +651,14 @@ PrefabInstance:
     - target: {fileID: 6758208256071121283, guid: c5f93fa44fedf8344860f2f364d64aad, type: 3}
       propertyPath: m_text
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6962924835363204192, guid: c5f93fa44fedf8344860f2f364d64aad, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6962924835363204192, guid: c5f93fa44fedf8344860f2f364d64aad, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1162,6 +1178,14 @@ PrefabInstance:
       propertyPath: m_text
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 6962924835363204192, guid: c5f93fa44fedf8344860f2f364d64aad, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6962924835363204192, guid: c5f93fa44fedf8344860f2f364d64aad, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1294,6 +1318,14 @@ PrefabInstance:
 
 '
       objectReference: {fileID: 0}
+    - target: {fileID: 6962924835363204192, guid: c5f93fa44fedf8344860f2f364d64aad, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6962924835363204192, guid: c5f93fa44fedf8344860f2f364d64aad, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1409,6 +1441,14 @@ PrefabInstance:
       value: '10
 
 '
+      objectReference: {fileID: 0}
+    - target: {fileID: 6962924835363204192, guid: c5f93fa44fedf8344860f2f364d64aad, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6962924835363204192, guid: c5f93fa44fedf8344860f2f364d64aad, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1768,6 +1808,14 @@ PrefabInstance:
       propertyPath: m_text
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 6962924835363204192, guid: c5f93fa44fedf8344860f2f364d64aad, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6962924835363204192, guid: c5f93fa44fedf8344860f2f364d64aad, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1881,6 +1929,14 @@ PrefabInstance:
     - target: {fileID: 6758208256071121283, guid: c5f93fa44fedf8344860f2f364d64aad, type: 3}
       propertyPath: m_text
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6962924835363204192, guid: c5f93fa44fedf8344860f2f364d64aad, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6962924835363204192, guid: c5f93fa44fedf8344860f2f364d64aad, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2000,6 +2056,14 @@ PrefabInstance:
     - target: {fileID: 6758208256071121283, guid: c5f93fa44fedf8344860f2f364d64aad, type: 3}
       propertyPath: m_text
       value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 6962924835363204192, guid: c5f93fa44fedf8344860f2f364d64aad, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6962924835363204192, guid: c5f93fa44fedf8344860f2f364d64aad, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2130,6 +2194,14 @@ PrefabInstance:
     - target: {fileID: 6758208256071121283, guid: c5f93fa44fedf8344860f2f364d64aad, type: 3}
       propertyPath: m_text
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6962924835363204192, guid: c5f93fa44fedf8344860f2f364d64aad, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6962924835363204192, guid: c5f93fa44fedf8344860f2f364d64aad, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2425,6 +2497,14 @@ PrefabInstance:
       propertyPath: m_text
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 6962924835363204192, guid: c5f93fa44fedf8344860f2f364d64aad, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6962924835363204192, guid: c5f93fa44fedf8344860f2f364d64aad, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2554,6 +2634,14 @@ PrefabInstance:
     - target: {fileID: 6758208256071121283, guid: c5f93fa44fedf8344860f2f364d64aad, type: 3}
       propertyPath: m_text
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6962924835363204192, guid: c5f93fa44fedf8344860f2f364d64aad, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6962924835363204192, guid: c5f93fa44fedf8344860f2f364d64aad, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2753,6 +2841,14 @@ PrefabInstance:
       propertyPath: stageSelectAnimation
       value: 
       objectReference: {fileID: 640833186}
+    - target: {fileID: 6962924835363204192, guid: c5f93fa44fedf8344860f2f364d64aad, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6962924835363204192, guid: c5f93fa44fedf8344860f2f364d64aad, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
