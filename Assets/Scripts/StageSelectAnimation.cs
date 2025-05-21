@@ -26,13 +26,13 @@ public class StageSelectAnimation : MonoBehaviour // ƒXƒe[ƒW‚ª‘I‚Î‚ê‚½‚Æ‚«‚ÌƒAƒ
     public void LoadScene(string sceneName)
     {
         if (isAnimating) return;
+        DOTween.KillAll();
         this.transform.parent = null;
         isAnimating = true;
         SetNextScene(sceneName);
         DontDestroyOnLoad(this);
         StartCoroutine(GenerateImages());
     }
-
     IEnumerator GenerateImages()
     {
         Sprite sprite = usingImages[Random.Range(0, usingImages.Count)];

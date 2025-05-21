@@ -55,7 +55,7 @@ public class StageManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape) && isPlaying)
         {
             StageSelectAnimation stageSelectAnimation = FindAnyObjectByType<StageSelectAnimation>();
-            DOTween.KillAll();
+            //DOTween.KillAll();
             stageSelectAnimation.LoadScene("StageSelect");
         }
     }
