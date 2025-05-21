@@ -1,58 +1,103 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class VolumePanelShowing : MonoBehaviour
 {
     [SerializeField] private GameObject scrollbars;
+    [SerializeField] private Image fillImage;
     [SerializeField] private CanvasGroup canvasGroup;
+    [SerializeField] private float appearDuration = 0.5f;
+    private float appearTime = 0f;
     private bool showing = false;
+    private bool filling = false;
     public bool IsShowing => showing;
-    private bool isfixed = false;
     private void Start()
     {
         // èâä˙âªèàóù
         showing = false;
-        isfixed = false;
         UpdateWindow();
+    }
+    private void Update()
+    {
+        if (filling)
+        {
+            Fill();
+        }
+        if (showing)
+        {
+            scrollbars.SetActive(true);
+            UpdateWindow();
+        }
+        else
+        {
+            scrollbars.SetActive(false);
+        }
     }
     private void UpdateWindow()
     {
-        if (isfixed)
+        if (showing)
         {
             canvasGroup.alpha = 1f;
             canvasGroup.interactable = true;
             showing = true;
             return;
         }
-        if (showing)
-        {
-            canvasGroup.alpha = 1f;
-            canvasGroup.interactable = true;
-        }
         else
         {
             canvasGroup.alpha = 0f;
             canvasGroup.interactable = false;
+            showing = false;
+            return;
         }
     }
-    public void SetShowing(bool show)
+    public void PointerDown()
     {
-        showing = show;
+        if (showing) HidePanel();
+        else StartFill();
+    }
+    public void PointerUp()
+    {
+        StopFill();
+    }
+    private void HidePanel()
+    {
+        if (!showing) return;
+        canvasGroup.alpha = 0f;
+        canvasGroup.interactable = false;
+        showing = false;
+        appearTime = 0f;
+        fillImage.fillAmount = 0f;
         UpdateWindow();
     }
-    public void ToggleShowing()
+    private void ShowPanel()
     {
-        showing = !showing;
+        if (showing) return;
+        showing = true;
+        appearTime = 0f;
         UpdateWindow();
     }
-    public void SetFixed(bool fixed_)
+    private void StartFill()
     {
-        isfixed = fixed_;
-        UpdateWindow();
+        filling = true;
     }
-    public void ToggleFixed()
+    private void StopFill()
     {
-        isfixed = !isfixed;
-        showing = isfixed;
-        UpdateWindow();
+        filling = false;
+        appearTime = 0f;
+        fillImage.fillAmount = 0f;
+    }
+    private void Fill()
+    {
+        if (showing) return;
+        if (appearTime < appearDuration)
+        {
+            appearTime += Time.deltaTime;
+            fillImage.fillAmount = appearTime / appearDuration;
+        }
+        else
+        {
+            ShowPanel();
+            appearTime = 0f;
+        }
     }
 }
