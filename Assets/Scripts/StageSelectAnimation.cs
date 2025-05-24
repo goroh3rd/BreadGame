@@ -51,7 +51,7 @@ public class StageSelectAnimation : MonoBehaviour // ƒXƒe[ƒW‚ª‘I‚Î‚ê‚½‚Æ‚«‚ÌƒAƒ
                 SpriteRenderer sr = image.GetComponent<SpriteRenderer>();
                 sr.sprite = sprite;
                 DontDestroyOnLoad(image);
-                sr.sortingOrder = image.transform.GetSiblingIndex();
+                sr.sortingOrder = (rows + 1) * (cols + 1) - image.transform.GetSiblingIndex();
                 image.transform.localScale = Vector3.zero;
                 images[y, x] = image;
 

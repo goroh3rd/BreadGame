@@ -352,7 +352,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 2100000, guid: e945799a0b98f5148a993cf1249b305a, type: 2}
-  m_Color: {r: 1, g: 0.69803923, b: 0.69803923, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -361,7 +361,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -501,7 +501,7 @@ MonoBehaviour:
   button: {fileID: 1215679843247292631}
   scene: 
   image: {fileID: 2365507340023487843}
-  completedColor: {r: 1, g: 0.69803923, b: 0.69803923, a: 1}
+  completedColor: {r: 1, g: 0.72264147, b: 0.72264147, a: 1}
   completedMaterial: {fileID: 2100000, guid: e945799a0b98f5148a993cf1249b305a, type: 2}
   stageSelectAnimation: {fileID: 0}
   recordText: {fileID: 1153716396691856959}

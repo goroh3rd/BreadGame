@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 66092cb6fc7fe5148986e11afba429cf
+guid: e3c3287b5177fdb4583c3b55441a8a3b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3356302069181093370
-    second: cream_0
-  - first:
-      213: 4407236861841038038
-    second: cream_1
+      213: -5018219993924804183
+    second: Tng_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -54,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 700
+  spritePixelsToUnits: 1000
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -116,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: cream_0
+      name: Tng_0
       rect:
         serializedVersion: 2
-        x: 143
-        y: 295
-        width: 725
-        height: 476
+        x: 285
+        y: 39
+        width: 489
+        height: 886
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,30 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 60a6d8fec050c61d0800000000000000
-      internalID: -3356302069181093370
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: cream_1
-      rect:
-        serializedVersion: 2
-        x: 576
-        y: 771
-        width: 12
-        height: 4
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6dada074396a92d30800000000000000
-      internalID: 4407236861841038038
+      spriteID: 9a16951d083bb5ab0800000000000000
+      internalID: -5018219993924804183
       vertices: []
       indices: 
       edges: []
@@ -163,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 899fb409ceaf59445a25f587a734fe78
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -173,8 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      cream_0: -3356302069181093370
-      cream_1: 4407236861841038038
+      Tng_0: -5018219993924804183
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
