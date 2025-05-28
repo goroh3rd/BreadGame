@@ -15,6 +15,10 @@ public class SelectButtonBehaviour : MonoBehaviour
     private void Start()
     {
         recordText.text = "";
+        SetMaterial();
+    }
+    private void SetMaterial()
+    {
         if (PlayerPrefs.GetFloat(scene, -1) != -1)
         {
             image.material = completedMaterial;
@@ -25,10 +29,6 @@ public class SelectButtonBehaviour : MonoBehaviour
             image.material = null;
             image.color = Color.white;
         }
-    }
-    public void LoadScene()
-    {
-        stageSelectAnimation.LoadScene(scene);
     }
     public void Select()
     {
@@ -42,8 +42,20 @@ public class SelectButtonBehaviour : MonoBehaviour
     }
     public void Click()
     {
-        this.transform.localScale = new Vector3(1f, 1f, 1f);
-        StartCoroutine(SoundManager.PlaySE(7, 1f)); // SEを鳴らす
+        if (Input.GetKey(KeyCode.Delete))
+        {
+            // デバッグ用：レコードを削除
+            PlayerPrefs.DeleteKey(scene);
+            SetRecordText();
+            SetMaterial();
+        }
+        else
+        {
+            // 通常のクリック処理
+            this.transform.localScale = new Vector3(1f, 1f, 1f);
+            StartCoroutine(SoundManager.PlaySE(7, 1f)); // SEを鳴らす
+            stageSelectAnimation.LoadScene(scene);
+        }
     }
     public void SetRecordText()
     {
