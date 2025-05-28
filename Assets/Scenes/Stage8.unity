@@ -224,7 +224,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1062147544849088171, guid: 3a7a2507b7cc57a49bead88c92bcba86, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.1
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 1062147544849088171, guid: 3a7a2507b7cc57a49bead88c92bcba86, type: 3}
       propertyPath: m_LocalScale.y
@@ -232,7 +232,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1062147544849088171, guid: 3a7a2507b7cc57a49bead88c92bcba86, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.1
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 1062147544849088171, guid: 3a7a2507b7cc57a49bead88c92bcba86, type: 3}
       propertyPath: m_LocalPosition.x
@@ -240,7 +240,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1062147544849088171, guid: 3a7a2507b7cc57a49bead88c92bcba86, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.4458
+      value: 4.28
       objectReference: {fileID: 0}
     - target: {fileID: 1062147544849088171, guid: 3a7a2507b7cc57a49bead88c92bcba86, type: 3}
       propertyPath: m_LocalPosition.z
@@ -276,11 +276,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1062147544849088171, guid: 3a7a2507b7cc57a49bead88c92bcba86, type: 3}
       propertyPath: m_ConstrainProportionsScale
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2482958751588378342, guid: 3a7a2507b7cc57a49bead88c92bcba86, type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3608140930388538359, guid: 3a7a2507b7cc57a49bead88c92bcba86, type: 3}
       propertyPath: m_Name
       value: Cooker
+      objectReference: {fileID: 0}
+    - target: {fileID: 7116058716367063567, guid: 3a7a2507b7cc57a49bead88c92bcba86, type: 3}
+      propertyPath: m_SortingOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7332502591842792387, guid: 3a7a2507b7cc57a49bead88c92bcba86, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -685,7 +697,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1062147544849088171, guid: 3a7a2507b7cc57a49bead88c92bcba86, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.1
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 1062147544849088171, guid: 3a7a2507b7cc57a49bead88c92bcba86, type: 3}
       propertyPath: m_LocalScale.y
@@ -693,7 +705,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1062147544849088171, guid: 3a7a2507b7cc57a49bead88c92bcba86, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.1
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 1062147544849088171, guid: 3a7a2507b7cc57a49bead88c92bcba86, type: 3}
       propertyPath: m_LocalPosition.x
@@ -701,7 +713,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1062147544849088171, guid: 3a7a2507b7cc57a49bead88c92bcba86, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.4458
+      value: 4.28
       objectReference: {fileID: 0}
     - target: {fileID: 1062147544849088171, guid: 3a7a2507b7cc57a49bead88c92bcba86, type: 3}
       propertyPath: m_LocalPosition.z
@@ -737,11 +749,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1062147544849088171, guid: 3a7a2507b7cc57a49bead88c92bcba86, type: 3}
       propertyPath: m_ConstrainProportionsScale
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2482958751588378342, guid: 3a7a2507b7cc57a49bead88c92bcba86, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3608140930388538359, guid: 3a7a2507b7cc57a49bead88c92bcba86, type: 3}
       propertyPath: m_Name
       value: Cooker (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7116058716367063567, guid: 3a7a2507b7cc57a49bead88c92bcba86, type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7332502591842792387, guid: 3a7a2507b7cc57a49bead88c92bcba86, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1178,7 +1202,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1062147544849088171, guid: 3a7a2507b7cc57a49bead88c92bcba86, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.1
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 1062147544849088171, guid: 3a7a2507b7cc57a49bead88c92bcba86, type: 3}
       propertyPath: m_LocalScale.y
@@ -1186,7 +1210,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1062147544849088171, guid: 3a7a2507b7cc57a49bead88c92bcba86, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.1
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 1062147544849088171, guid: 3a7a2507b7cc57a49bead88c92bcba86, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1194,7 +1218,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1062147544849088171, guid: 3a7a2507b7cc57a49bead88c92bcba86, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.4458
+      value: 4.28
       objectReference: {fileID: 0}
     - target: {fileID: 1062147544849088171, guid: 3a7a2507b7cc57a49bead88c92bcba86, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1230,11 +1254,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1062147544849088171, guid: 3a7a2507b7cc57a49bead88c92bcba86, type: 3}
       propertyPath: m_ConstrainProportionsScale
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2482958751588378342, guid: 3a7a2507b7cc57a49bead88c92bcba86, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3608140930388538359, guid: 3a7a2507b7cc57a49bead88c92bcba86, type: 3}
       propertyPath: m_Name
       value: Cooker (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7116058716367063567, guid: 3a7a2507b7cc57a49bead88c92bcba86, type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7332502591842792387, guid: 3a7a2507b7cc57a49bead88c92bcba86, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1540,7 +1576,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1062147544849088171, guid: 3a7a2507b7cc57a49bead88c92bcba86, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.1
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 1062147544849088171, guid: 3a7a2507b7cc57a49bead88c92bcba86, type: 3}
       propertyPath: m_LocalScale.y
@@ -1548,7 +1584,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1062147544849088171, guid: 3a7a2507b7cc57a49bead88c92bcba86, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.1
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 1062147544849088171, guid: 3a7a2507b7cc57a49bead88c92bcba86, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1556,7 +1592,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1062147544849088171, guid: 3a7a2507b7cc57a49bead88c92bcba86, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.4458
+      value: 4.28
       objectReference: {fileID: 0}
     - target: {fileID: 1062147544849088171, guid: 3a7a2507b7cc57a49bead88c92bcba86, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1592,11 +1628,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1062147544849088171, guid: 3a7a2507b7cc57a49bead88c92bcba86, type: 3}
       propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2482958751588378342, guid: 3a7a2507b7cc57a49bead88c92bcba86, type: 3}
+      propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3608140930388538359, guid: 3a7a2507b7cc57a49bead88c92bcba86, type: 3}
       propertyPath: m_Name
       value: Cooker (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7116058716367063567, guid: 3a7a2507b7cc57a49bead88c92bcba86, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7332502591842792387, guid: 3a7a2507b7cc57a49bead88c92bcba86, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1841,7 +1889,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1062147544849088171, guid: 3a7a2507b7cc57a49bead88c92bcba86, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.1
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 1062147544849088171, guid: 3a7a2507b7cc57a49bead88c92bcba86, type: 3}
       propertyPath: m_LocalScale.y
@@ -1849,7 +1897,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1062147544849088171, guid: 3a7a2507b7cc57a49bead88c92bcba86, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.1
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 1062147544849088171, guid: 3a7a2507b7cc57a49bead88c92bcba86, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1857,7 +1905,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1062147544849088171, guid: 3a7a2507b7cc57a49bead88c92bcba86, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.4458
+      value: 4.28
       objectReference: {fileID: 0}
     - target: {fileID: 1062147544849088171, guid: 3a7a2507b7cc57a49bead88c92bcba86, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1893,11 +1941,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1062147544849088171, guid: 3a7a2507b7cc57a49bead88c92bcba86, type: 3}
       propertyPath: m_ConstrainProportionsScale
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2482958751588378342, guid: 3a7a2507b7cc57a49bead88c92bcba86, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3608140930388538359, guid: 3a7a2507b7cc57a49bead88c92bcba86, type: 3}
       propertyPath: m_Name
       value: Cooker (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7116058716367063567, guid: 3a7a2507b7cc57a49bead88c92bcba86, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7332502591842792387, guid: 3a7a2507b7cc57a49bead88c92bcba86, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

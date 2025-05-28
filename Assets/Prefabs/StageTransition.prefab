@@ -104,6 +104,8 @@ MonoBehaviour:
   - {fileID: 1384307969618782483, guid: 140daa49351737f46b3cc9bcf967ecda, type: 3}
   - {fileID: -3356302069181093370, guid: 66092cb6fc7fe5148986e11afba429cf, type: 3}
   - {fileID: -6601691336363857274, guid: eac710ec03cff0a4fba775e40638de72, type: 3}
+  - {fileID: 8689319978456130346, guid: 99cd4c001776b2d48b684373fb4af147, type: 3}
+  - {fileID: 3180879816699848979, guid: 0b6165f2a627db1408ce994deffce79d, type: 3}
   imagePrefab: {fileID: 7068586657331344955, guid: f8facd9fc633d7c429f0ed52c842a159, type: 3}
   rows: 5
   cols: 9
