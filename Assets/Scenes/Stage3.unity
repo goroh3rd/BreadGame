@@ -354,6 +354,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4308189400459965871, guid: d74baad1fea44e947b220b15a7d85325, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4411609877925647099, guid: d74baad1fea44e947b220b15a7d85325, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -708,7 +712,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2482958751588378342, guid: 3a7a2507b7cc57a49bead88c92bcba86, type: 3}
       propertyPath: m_Color.a
-      value: 0.47058824
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2482958751588378342, guid: 3a7a2507b7cc57a49bead88c92bcba86, type: 3}
       propertyPath: m_SortingLayer
