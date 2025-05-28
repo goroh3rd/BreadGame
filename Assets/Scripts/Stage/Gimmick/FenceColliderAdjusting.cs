@@ -4,9 +4,11 @@ public class FenceColliderAdjusting : MonoBehaviour
 {
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private CapsuleCollider2D capsuleCollider;
+    [SerializeField] private SpriteRenderer shadow; // 影のGameObject
     private void Start()
     {
         AdjustCollider();
+        AdjustShadow();
     }
     private void AdjustCollider() // BoxCollider2Dのサイズに合わせてCapsuleCollider2Dのサイズを調整する
     {
@@ -21,5 +23,10 @@ public class FenceColliderAdjusting : MonoBehaviour
         }
         capsuleCollider.enabled = true;
         capsuleCollider.size = new Vector2(spriteRenderer.size.x, spriteRenderer.size.y);
+    }
+    private void AdjustShadow()
+    {
+        shadow.enabled = true;
+        shadow.size = spriteRenderer.size;
     }
 }
