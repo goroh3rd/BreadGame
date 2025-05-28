@@ -32,12 +32,12 @@ public class SelectButtonBehaviour : MonoBehaviour
     }
     public void Select()
     {
-        this.transform.localScale = new Vector3(1.1f, 1.1f, 1.1f);
+        this.transform.localScale = new Vector3(1.2f, 1.2f, 1.2f);
         SetRecordText();
     }
     public void Deselect()
     {
-        this.transform.localScale = new Vector3(1f, 1f, 1f);
+        this.transform.localScale = new Vector3(1.1f, 1.1f, 1.1f);
         recordText.text = "";
     }
     public void Click()
@@ -52,7 +52,7 @@ public class SelectButtonBehaviour : MonoBehaviour
         else
         {
             // í èÌÇÃÉNÉäÉbÉNèàóù
-            this.transform.localScale = new Vector3(1f, 1f, 1f);
+            this.transform.localScale = new Vector3(1.1f, 1.1f, 1.1f);
             StartCoroutine(SoundManager.PlaySE(7, 1f)); // SEÇñ¬ÇÁÇ∑
             stageSelectAnimation.LoadScene(scene);
         }
