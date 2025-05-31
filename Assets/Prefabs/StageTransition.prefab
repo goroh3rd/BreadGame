@@ -113,5 +113,5 @@ MonoBehaviour:
   offset: {x: 1, y: 1}
   appearDuration: 0.6
   disappearDuration: 0.6
-  transitionDelay: 0
+  transitionDelay: 0.32
   nextScene: SampleScene
