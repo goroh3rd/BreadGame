@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 6c5785b177cbe6b41a891c20c4eec22c
+guid: 6e80b01bb0af5574784c280db8d85f9f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6413138906981451842
-    second: Oven_0
+      213: 4375808267126783530
+    second: BoardSingle_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Oven_0
+      name: BoardSingle_0
       rect:
         serializedVersion: 2
-        x: 113
-        y: 98
-        width: 774
-        height: 884
+        x: 72
+        y: 266
+        width: 885
+        height: 507
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: eb732227424fff6a0800000000000000
-      internalID: -6413138906981451842
+      spriteID: a2e3f475f6ef9bc30800000000000000
+      internalID: 4375808267126783530
       vertices: []
       indices: 
       edges: []
@@ -147,8 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Oven_0: -6413138906981451842
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
