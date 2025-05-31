@@ -24,7 +24,7 @@ public class FenceColliderAdjusting : MonoBehaviour
         capsuleCollider.enabled = true;
         capsuleCollider.size = new Vector2(spriteRenderer.size.x, spriteRenderer.size.y);
     }
-    private void AdjustShadow()
+    public void AdjustShadow()
     {
         shadow.enabled = true;
         shadow.size = spriteRenderer.size;
