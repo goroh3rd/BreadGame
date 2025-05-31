@@ -29,4 +29,9 @@ public class FenceColliderAdjusting : MonoBehaviour
         shadow.enabled = true;
         shadow.size = spriteRenderer.size;
     }
+    //private void OnValidate()
+    //{
+    //    if (spriteRenderer == null || capsuleCollider == null || shadow == null) return;
+    //    AdjustShadow();
+    //}
 }
