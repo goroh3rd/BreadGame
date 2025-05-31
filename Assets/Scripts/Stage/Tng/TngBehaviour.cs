@@ -11,7 +11,9 @@ public class TngBehaviour : MonoBehaviour
     [SerializeField] GameObject left;
     [SerializeField] GameObject right;
     [SerializeField] SpriteRenderer leftImage;
+    [SerializeField] SpriteRenderer leftShadow;
     [SerializeField] SpriteRenderer rightImage;
+    [SerializeField] SpriteRenderer rightShadow;
     [SerializeField] Sprite openSprite;
     [SerializeField] Sprite closeSprite;
     [SerializeField] GameObject clickParticle;
@@ -107,7 +109,9 @@ public class TngBehaviour : MonoBehaviour
         leftRenderer.color = Input.GetMouseButton(0) ? Color.red : Color.white;
         rightRenderer.color = Input.GetMouseButton(1) ? Color.red : Color.white;
         leftImage.sprite = Input.GetMouseButton(0) ? closeSprite : openSprite;
+        leftShadow.sprite = Input.GetMouseButton(0) ? closeSprite : openSprite;
         rightImage.sprite = Input.GetMouseButton(1) ? closeSprite : openSprite;
+        rightShadow.sprite = Input.GetMouseButton(1) ? closeSprite : openSprite;
     }
     private void ClickEmit(GameObject gameObject)
     {
