@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using DG.Tweening;
 
 public class SelectManager : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class SelectManager : MonoBehaviour
         }
         if (reset > resetTime)
         {
+            DOTween.KillAll();
             reset = 0;
             GlobalData.ResetAllRecords();
             Debug.Log("Reset all records");

@@ -9,9 +9,10 @@ public class VolumePanelShowing : MonoBehaviour
     [SerializeField] private float appearDuration = 0.5f;
     private float appearTime = 0f;
     private bool showing = false;
-    private bool filling = false;
-    public bool intracting = false;
     public bool IsShowing => showing;
+    private bool filling = false;
+    public bool IsFilling => filling;
+    public bool intracting = false;
     private void Start()
     {
         // ‰Šú‰»ˆ—
