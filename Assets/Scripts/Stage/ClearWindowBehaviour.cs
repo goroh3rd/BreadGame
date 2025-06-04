@@ -36,7 +36,10 @@ public class ClearWindowBehaviour : MonoBehaviour
         }
         retryButton.SetActive(true);
         stageSelectButton.SetActive(true);
-        nextStageButton.SetActive(true);
+        if (SceneManager.GetActiveScene().name != "Stage14")
+        {
+            nextStageButton.SetActive(true);
+        }
         this.canvasGroup.DOFade(1, 0.5f);
         this.transform.DOLocalMoveY(0, 0.5f).SetEase(Ease.OutBack);
     }

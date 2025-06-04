@@ -108,6 +108,10 @@ public class BreadBehaviour : MonoBehaviour
         particle.SetActive(true);
         ParticleSystem particleSystem = particle.GetComponent<ParticleSystem>();
         particleSystem.textureSheetAnimation.SetSprite(0, star);
+        //Color c = new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f), 0.8f);
+        Color c = new Color(1f, 0.8f, 0.2f, 0.8f); // â©êFÇ¡Ç€Ç¢êFÇ…ïœçX
+        ParticleSystem.MainModule main = particleSystem.main;
+        main.startColor = c;
         particleSystem.Play();
         //PlaySound(goal);
         StartCoroutine(SoundManager.PlaySE(1, 0.2f));
