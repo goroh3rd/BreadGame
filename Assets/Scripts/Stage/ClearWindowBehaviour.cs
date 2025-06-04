@@ -36,7 +36,7 @@ public class ClearWindowBehaviour : MonoBehaviour
         }
         retryButton.SetActive(true);
         stageSelectButton.SetActive(true);
-        if (SceneManager.GetActiveScene().name != "Stage14")
+        if ((SceneManager.GetActiveScene().name != "Stage15"))
         {
             nextStageButton.SetActive(true);
         }
