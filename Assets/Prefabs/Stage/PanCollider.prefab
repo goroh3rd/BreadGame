@@ -116,7 +116,7 @@ MonoBehaviour:
   breadRb: {fileID: 8360752981180401792}
   breadCol: {fileID: -4689714453371512689}
   breadAnimator: {fileID: 3798685656948491829}
-  smoke: {fileID: -8137532000326344740, guid: 374e61a8af0d26549887eb3b3040184a, type: 3}
+  smoke: {fileID: 21300000, guid: 914fdfd73f6d5594f95ed595afe219bd, type: 3}
   star: {fileID: -5184127257427349010, guid: 9cf13289a5d44d441a695abc039a0351, type: 3}
   imageManager: {fileID: 0}
   panticle: {fileID: 2712381571795538843, guid: c67c73483606b6449a3f4079f39aa610, type: 3}
