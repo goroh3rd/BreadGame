@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      bg_pattern1_aozora_0: 6245598921889829247
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
